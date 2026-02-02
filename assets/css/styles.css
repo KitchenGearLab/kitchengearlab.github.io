@@ -7,6 +7,9 @@
    1) Design tokens (CSS vars)
 ------------------------------ */
 :root{
+  /* Tell the browser we are light UI only */
+  color-scheme: light;
+
   /* Typography */
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
                "Apple Color Emoji", "Segoe UI Emoji";
@@ -15,14 +18,14 @@
 
   /* Layout */
   --container: 1120px;
-  --radius: 12px;
-  --radius-sm: 10px;
+  --radius: 14px;             /* slightly more premium */
+  --radius-sm: 12px;
 
   /* Colors (neutral + subtle green accent + subtle attention) */
   --bg: #ffffff;
-  --surface: #f7f8fa;
+  --surface: #f6f7f9;         /* a touch softer */
   --surface-2: #fbfbfc;
-  --border: #e6e8ee;
+  --border: #e4e7ef;
 
   --text: #0f172a;            /* slate-900-ish */
   --muted: #475569;           /* slate-600-ish */
@@ -40,6 +43,7 @@
 
   /* Effects (performance-friendly) */
   --shadow-sm: 0 1px 0 rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 12px 30px rgba(15, 23, 42, 0.08); /* premium, still subtle */
   --ring: 0 0 0 3px rgba(31, 122, 92, 0.22);
 
   /* Spacing */
@@ -55,27 +59,30 @@
   --s-10: 72px;
 }
 
-/* Optional dark mode: keep calm, avoid pure black */
+/* ✅ Light-only: disable auto-dark by forcing the same palette even if user prefers dark */
 @media (prefers-color-scheme: dark){
   :root{
-    --bg: #0b1220;
-    --surface: #111a2b;
-    --surface-2: #0f172a;
-    --border: rgba(255,255,255,0.10);
+    color-scheme: light;
 
-    --text: #e5e7eb;
-    --muted: #cbd5e1;
-    --muted-2: #94a3b8;
+    --bg: #ffffff;
+    --surface: #f6f7f9;
+    --surface-2: #fbfbfc;
+    --border: #e4e7ef;
 
-    --accent: #3fb68a;
-    --accent-2: #2e9b75;
-    --accent-soft: rgba(63,182,138,0.14);
+    --text: #0f172a;
+    --muted: #475569;
+    --muted-2: #64748b;
 
-    --attention: #f59e0b;
-    --attention-soft: rgba(245,158,11,0.12);
+    --accent: #1f7a5c;
+    --accent-2: #0f5f46;
+    --accent-soft: #e9f6f0;
 
-    --shadow-sm: 0 1px 0 rgba(0,0,0,0.35);
-    --ring: 0 0 0 3px rgba(63, 182, 138, 0.22);
+    --attention: #b45309;
+    --attention-soft: #fff7ed;
+
+    --shadow-sm: 0 1px 0 rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 12px 30px rgba(15, 23, 42, 0.08);
+    --ring: 0 0 0 3px rgba(31, 122, 92, 0.22);
   }
 }
 
@@ -99,6 +106,18 @@ body{
   line-height: var(--lh-base);
   color: var(--text);
   background: var(--bg);
+}
+
+/* Subtle page tint behind sections (very light, pro) */
+body::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(1200px 700px at 20% 0%, rgba(31, 122, 92, 0.06), transparent 60%),
+              radial-gradient(900px 600px at 90% 10%, rgba(180, 83, 9, 0.04), transparent 55%);
+  opacity: 0.9;
+  z-index: -1;
 }
 
 img, svg, video{
@@ -125,25 +144,25 @@ li{ margin: 0 0 var(--s-2); }
 
 h1, h2, h3, h4{
   margin: 0 0 var(--s-4);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: 1.18; /* slightly tighter, more editorial */
+  letter-spacing: -0.015em;
 }
 
 h1{
-  font-size: clamp(1.6rem, 2.2vw + 1rem, 2.4rem);
+  font-size: clamp(1.8rem, 2.4vw + 1rem, 2.6rem);
 }
 
 h2{
-  font-size: clamp(1.2rem, 1.2vw + 1rem, 1.6rem);
+  font-size: clamp(1.25rem, 1.25vw + 1rem, 1.7rem);
   margin-top: var(--s-8);
 }
 
 h3{
-  font-size: 1.1rem;
+  font-size: 1.12rem;
   margin-top: var(--s-6);
 }
 
-small, .small{ font-size: 0.9rem; color: var(--muted); }
+small, .small{ font-size: 0.92rem; color: var(--muted); }
 
 hr{
   border: 0;
@@ -182,7 +201,7 @@ pre{
   padding: var(--s-3) var(--s-4);
   border-radius: var(--radius-sm);
   color: var(--text);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
   z-index: 9999;
 }
 
@@ -193,13 +212,10 @@ pre{
 }
 
 /* Visible focus for keyboard users */
-:focus{
-  outline: none;
-}
-
+:focus{ outline: none; }
 :focus-visible{
   box-shadow: var(--ring);
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -218,7 +234,7 @@ pre{
 }
 
 .section{
-  padding: var(--s-8) 0;
+  padding: var(--s-9) 0; /* a bit more breathing room */
 }
 
 .grid{
@@ -247,6 +263,17 @@ pre{
   white-space: nowrap;
 }
 
+/* Nice section heading row (optional) */
+.section-head{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-5);
+  flex-wrap: wrap;
+  margin-bottom: var(--s-6);
+}
+.section-subtitle{ color: var(--muted); margin: 0; }
+
 /* -----------------------------
    5) Header / Nav (light sticky)
 ------------------------------ */
@@ -255,14 +282,8 @@ pre{
   top: 0;
   z-index: 1000;
   background: rgba(255,255,255,0.92);
-  backdrop-filter: saturate(140%) blur(6px);
-  border-bottom: 1px solid var(--border);
-}
-
-@media (prefers-color-scheme: dark){
-  .site-header{
-    background: rgba(11,18,32,0.85);
-  }
+  backdrop-filter: saturate(150%) blur(10px);
+  border-bottom: 1px solid rgba(228,231,239,0.9);
 }
 
 .header-inner{
@@ -281,21 +302,23 @@ pre{
 }
 
 .brand .logo{
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
   border: 1px solid var(--border);
-  background: var(--surface);
+  background: linear-gradient(180deg, var(--surface-2), var(--surface));
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
 }
 
 .brand .name{
-  font-weight: 700;
+  font-weight: 750;
   color: var(--text);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
   font-size: 1rem;
   line-height: 1.2;
 }
@@ -303,14 +326,14 @@ pre{
 .brand .tagline{
   display: block;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   line-height: 1.2;
 }
 
 .nav{
   display: flex;
   align-items: center;
-  gap: var(--s-3);
+  gap: var(--s-2);
   flex-wrap: wrap;
   justify-content: flex-end;
 }
@@ -320,7 +343,7 @@ pre{
   align-items: center;
   gap: var(--s-2);
   padding: 10px 12px;
-  border-radius: 10px;
+  border-radius: 12px;
   color: var(--text);
   border: 1px solid transparent;
   transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
@@ -334,7 +357,7 @@ pre{
 
 .nav a[aria-current="page"]{
   background: var(--accent-soft);
-  border-color: rgba(31, 122, 92, 0.25);
+  border-color: rgba(31, 122, 92, 0.22);
   color: var(--text);
 }
 
@@ -354,20 +377,14 @@ pre{
   text-underline-offset: 3px;
 }
 
-.breadcrumbs a:hover{
-  color: var(--text);
-}
-
-.breadcrumbs .sep{
-  margin: 0 var(--s-2);
-  color: var(--muted-2);
-}
+.breadcrumbs a:hover{ color: var(--text); }
+.breadcrumbs .sep{ margin: 0 var(--s-2); color: var(--muted-2); }
 
 /* -----------------------------
    7) Hero (editorial lab)
 ------------------------------ */
 .hero{
-  padding: var(--s-8) 0 var(--s-7);
+  padding: var(--s-9) 0 var(--s-8);
 }
 
 .hero-inner{
@@ -385,18 +402,18 @@ pre{
 
 .hero-card{
   border: 1px solid var(--border);
-  background: linear-gradient(180deg, var(--surface-2), var(--surface));
+  background:
+    radial-gradient(900px 320px at 15% 0%, rgba(31,122,92,0.10), transparent 60%),
+    linear-gradient(180deg, var(--surface-2), var(--surface));
   border-radius: var(--radius);
-  padding: var(--s-6);
-  box-shadow: var(--shadow-sm);
+  padding: var(--s-7);
+  box-shadow: var(--shadow-md);
 }
 
-.hero h1{
-  margin-bottom: var(--s-3);
-}
+.hero h1{ margin-bottom: var(--s-3); }
 
 .hero .lead{
-  font-size: 1.05rem;
+  font-size: 1.07rem;
   color: var(--muted);
   margin-bottom: var(--s-6);
 }
@@ -415,13 +432,13 @@ pre{
   padding: 6px 10px;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: var(--bg);
+  background: rgba(255,255,255,0.75);
   color: var(--muted);
   font-size: 0.9rem;
 }
 
 .tag.accent{
-  border-color: rgba(31, 122, 92, 0.35);
+  border-color: rgba(31, 122, 92, 0.28);
   background: var(--accent-soft);
   color: var(--text);
 }
@@ -430,17 +447,13 @@ pre{
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--bg);
-  padding: var(--s-6);
+  padding: var(--s-5);
+  box-shadow: var(--shadow-sm);
 }
 
-.hero-aside h2{
-  margin-top: 0;
-  font-size: 1.1rem;
-}
-
-.hero-aside p{
-  margin-bottom: var(--s-4);
-  color: var(--muted);
+.hero-aside img{
+  border-radius: calc(var(--radius) - 6px);
+  border: 1px solid var(--border);
 }
 
 /* -----------------------------
@@ -452,11 +465,15 @@ pre{
   background: var(--bg);
   padding: var(--s-6);
   box-shadow: var(--shadow-sm);
+  transition: transform 140ms ease, box-shadow 140ms ease;
 }
 
-.card.soft{
-  background: var(--surface);
+.card:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
+
+.card.soft{ background: var(--surface); }
 
 .card-header{
   display: flex;
@@ -468,7 +485,7 @@ pre{
 
 .card-title{
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 750;
   margin: 0;
 }
 
@@ -484,14 +501,14 @@ pre{
   margin-bottom: var(--s-4);
 }
 
-.card .meta .tag{
-  font-size: 0.85rem;
-}
+.card .meta .tag{ font-size: 0.85rem; }
 
 /* Top picks emphasis (subtle) */
 .card.top-pick{
-  border-color: rgba(31, 122, 92, 0.35);
-  background: linear-gradient(180deg, var(--accent-soft), var(--bg) 55%);
+  border-color: rgba(31, 122, 92, 0.30);
+  background:
+    radial-gradient(700px 220px at 10% 0%, rgba(31,122,92,0.12), transparent 60%),
+    linear-gradient(180deg, var(--accent-soft), var(--bg) 55%);
 }
 
 /* -----------------------------
@@ -507,27 +524,27 @@ pre{
   border: 1px solid rgba(15, 23, 42, 0.18);
   background: var(--text);
   color: var(--bg);
-  font-weight: 650;
+  font-weight: 700;
   font-size: 0.95rem;
   line-height: 1.1;
   cursor: pointer;
-  transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+  transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease, color 120ms ease, box-shadow 120ms ease;
   text-decoration: none;
   white-space: nowrap;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.06);
 }
 
 .btn:hover{
   transform: translateY(-1px);
   background: rgba(15, 23, 42, 0.92);
   text-decoration: none;
+  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.10);
 }
 
-.btn:active{
-  transform: translateY(0);
-}
+.btn:active{ transform: translateY(0); }
 
 .btn-secondary{
-  background: var(--bg);
+  background: rgba(255,255,255,0.8);
   color: var(--text);
   border-color: var(--border);
 }
@@ -537,14 +554,12 @@ pre{
 }
 
 .btn-accent{
-  background: var(--accent);
+  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0)) , var(--accent);
   border-color: rgba(31, 122, 92, 0.35);
   color: #ffffff;
 }
 
-.btn-accent:hover{
-  background: var(--accent-2);
-}
+.btn-accent:hover{ background: var(--accent-2); }
 
 .btn-quiet{
   background: transparent;
@@ -592,7 +607,7 @@ pre{
   align-items: center;
   gap: var(--s-2);
   font-size: 0.88rem;
-  font-weight: 650;
+  font-weight: 750;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -678,7 +693,7 @@ pre{
   top: 0;
   background: var(--surface);
   color: var(--text);
-  font-weight: 700;
+  font-weight: 750;
   border-bottom: 1px solid var(--border);
 }
 
@@ -687,12 +702,10 @@ pre{
 }
 
 .table td.muted,
-.table th.muted{
-  color: var(--muted);
-}
+.table th.muted{ color: var(--muted); }
 
 .table .best{
-  font-weight: 700;
+  font-weight: 750;
   color: var(--text);
 }
 
@@ -705,14 +718,14 @@ pre{
   background: var(--accent-soft);
   color: var(--text);
   font-size: 0.85rem;
-  font-weight: 650;
+  font-weight: 750;
 }
 
 /* -----------------------------
    13) Content formatting helpers
 ------------------------------ */
 .lead{
-  font-size: 1.05rem;
+  font-size: 1.07rem;
   color: var(--muted);
 }
 
@@ -758,14 +771,12 @@ pre{
   box-shadow: var(--shadow-sm);
 }
 
-.faq details + details{
-  margin-top: var(--s-3);
-}
+.faq details + details{ margin-top: var(--s-3); }
 
 .faq summary{
   cursor: pointer;
   list-style: none;
-  font-weight: 650;
+  font-weight: 750;
   color: var(--text);
   display: flex;
   align-items: center;
@@ -778,9 +789,9 @@ pre{
 .faq summary::after{
   content: "+";
   flex: 0 0 auto;
-  width: 28px;
-  height: 28px;
-  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 12px;
   border: 1px solid var(--border);
   display: inline-flex;
   align-items: center;
@@ -810,7 +821,7 @@ pre{
 .site-footer{
   border-top: 1px solid var(--border);
   background: var(--surface-2);
-  padding: var(--s-8) 0;
+  padding: var(--s-9) 0;
   margin-top: var(--s-9);
 }
 
@@ -827,7 +838,7 @@ pre{
 }
 
 .footer-title{
-  font-weight: 700;
+  font-weight: 750;
   margin-bottom: var(--s-3);
 }
 
@@ -843,9 +854,7 @@ pre{
   text-decoration-thickness: 2px;
 }
 
-.footer-links a:hover{
-  color: var(--text);
-}
+.footer-links a:hover{ color: var(--text); }
 
 .footer-fineprint{
   margin-top: var(--s-5);
@@ -868,7 +877,7 @@ input, select, textarea{
 }
 
 label{
-  font-weight: 650;
+  font-weight: 750;
   font-size: 0.95rem;
 }
 
@@ -877,8 +886,8 @@ label{
   padding: 11px 12px;
   border-radius: 12px;
   border: 1px solid var(--border);
-  background: var(--bg);
-  transition: border-color 120ms ease, background-color 120ms ease;
+  background: rgba(255,255,255,0.9);
+  transition: border-color 120ms ease, background-color 120ms ease, box-shadow 120ms ease;
 }
 
 .input:focus{
@@ -892,12 +901,7 @@ label{
 }
 
 /* -----------------------------
-   17) Simple utilities requested
------------------------------- */
-/* Already included: .container, .grid, .card, .btn, .btn-secondary, .tag, .note, .table, .pros, .cons, .faq */
-
-/* -----------------------------
-   18) Print styles
+   17) Print styles
 ------------------------------ */
 @media print{
   :root{
@@ -913,6 +917,8 @@ label{
     background: #ffffff !important;
     color: #000 !important;
   }
+
+  body::before{ display: none !important; }
 
   .site-header,
   .nav,
@@ -949,7 +955,5 @@ label{
     font-size: 10.5pt;
   }
 
-  .table thead th{
-    position: static;
-  }
+  .table thead th{ position: static; }
 }
