@@ -23,7 +23,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Open Graph (absolute URLs) -->
+  <!-- Open Graph -->
   <meta property="og:site_name" content="KitchenGearLab" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
@@ -34,9 +34,9 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/webp" />
-  <meta property="og:image:alt" content="Minimal, clean kitchen work surface with cookware silhouettes and soft light." />
+  <meta property="og:image:alt" content="Warm premium kitchen counter with modern appliances in soft natural daylight." />
 
-  <!-- Twitter Cards (absolute URLs) -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="KitchenGearLab: Practical Kitchen Gear Reviews" />
   <meta name="twitter:description" content="Neutral, test-driven kitchen gear reviews and buying guides focused on real-world cooking performance and usability." />
@@ -102,37 +102,6 @@
         "mainEntityOfPage": "https://kitchengearlab.github.io/",
         "datePublished": "2026-02-01",
         "dateModified": "2026-02-01"
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://kitchengearlab.github.io/#faq",
-        "inLanguage": "en-US",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Do you accept free products for reviews?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We may receive products for evaluation, but we aim to keep our conclusions independent. When we cannot verify a claim through testing or documentation, we note that it varies by model or remains unverified."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do you choose what to recommend?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We focus on usability, durability cues, cleaning practicality, and consistent performance. We avoid relying on marketing claims, and we call out trade-offs instead of presenting one-size-fits-all picks."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are your guides professional advice?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Content is informational only. We share what we learned from evaluation and research so you can compare options, but you should choose gear based on your needs and constraints."
-            }
-          }
-        ]
       }
     ]
   }
@@ -162,11 +131,15 @@
           </span>
         </a>
 
+        <!-- ✅ Only links that exist in your repo -->
         <nav class="nav" aria-label="Primary">
+          <a href="/" aria-current="page">Home</a>
           <a href="/guides/">Guides</a>
-          <a href="/reviews/">Reviews</a>
-          <a href="/how-we-test/">How we test</a>
-          <a href="/disclosures/">Disclosures</a>
+          <a href="/best-air-fryers/">Best Air Fryers</a>
+          <a href="/ninja-air-fryers/">Ninja Hub</a>
+          <a href="/disclosure/">Disclosure</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/about/">About</a>
         </nav>
       </div>
     </div>
@@ -188,11 +161,11 @@
 
             <div class="actions" role="group" aria-label="Primary actions">
               <a class="btn btn-accent" href="/guides/">Browse buying guides</a>
-              <a class="btn btn-secondary" href="/how-we-test/">How we test / evaluate</a>
+              <a class="btn btn-secondary" href="#method">Our methodology</a>
             </div>
 
             <p class="small" style="margin-top: var(--s-4);">
-              <a href="/disclosures/">Affiliate disclosure</a> applies. Content is informational only.
+              <a href="/disclosure/">Affiliate disclosure</a> applies. Content is informational only.
             </p>
 
             <p class="last-updated">Last updated: 2026-02-01</p>
@@ -209,7 +182,7 @@
                 src="https://kitchengearlab.github.io/assets/images/hero/home-hero-1600x840.webp"
                 width="2400"
                 height="1260"
-                alt="A clean countertop with neutral-toned cookware shapes and soft daylight."
+                alt="Warm premium kitchen counter with modern appliances in soft natural daylight."
                 loading="eager"
                 decoding="async"
                 fetchpriority="high"
@@ -227,75 +200,51 @@
       </div>
     </nav>
 
-    <section class="section" aria-labelledby="intro-title">
-      <div class="container">
-        <h2 id="intro-title">What KitchenGearLab is</h2>
-        <div class="stack">
-          <p>
-            We review kitchen gear with a simple goal: help you make fewer guesses. That means focusing on
-            repeatable checks, clear trade-offs, and practical constraints like cleaning, storage, and day-to-day comfort.
-          </p>
-          <p>
-            We avoid hype. If a claim can’t be confirmed through hands-on evaluation, documentation, or reliable evidence,
-            we treat it cautiously and note uncertainty.
-          </p>
-        </div>
-      </div>
-    </section>
-
     <section class="section" aria-labelledby="featured-title">
       <div class="container">
-        <h2 id="featured-title">Featured guides</h2>
-        <p class="muted">Starting points for common purchases, written to be updated as models change.</p>
+        <h2 id="featured-title">Start here</h2>
+        <p class="muted">Fast paths to your most important pages (all real links, no 404s).</p>
 
         <div class="grid cols-2" role="list" style="margin-top: var(--s-6);">
           <article class="card" role="listitem">
-            <h3 class="card-title"><a href="/guides/air-fryers/">Air fryers</a></h3>
-            <p class="muted">
-              What to compare beyond capacity: control clarity, cleaning practicality, and performance consistency (varies by model).
-            </p>
+            <h3 class="card-title"><a href="/best-air-fryers/">Best Air Fryers</a></h3>
+            <p class="muted">Comparison-first guide for the most common air fryer decision.</p>
             <div class="actions" style="margin-top: var(--s-4);">
-              <a class="btn btn-secondary" href="/guides/air-fryers/">Read guide</a>
+              <a class="btn btn-secondary" href="/best-air-fryers/">Open guide</a>
             </div>
           </article>
 
           <article class="card" role="listitem">
-            <h3 class="card-title"><a href="/guides/chef-knives/">Chef knives</a></h3>
-            <p class="muted">
-              Comfort and edge behavior matter more than labels. We outline what to test in your own kitchen.
-            </p>
+            <h3 class="card-title"><a href="/ninja-air-fryers/">Ninja Air Fryers Hub</a></h3>
+            <p class="muted">Brand hub: models, trade-offs, and related comparisons.</p>
             <div class="actions" style="margin-top: var(--s-4);">
-              <a class="btn btn-secondary" href="/guides/chef-knives/">Read guide</a>
+              <a class="btn btn-secondary" href="/ninja-air-fryers/">Open hub</a>
             </div>
           </article>
 
           <article class="card" role="listitem">
-            <h3 class="card-title"><a href="/guides/cutting-boards/">Cutting boards</a></h3>
-            <p class="muted">
-              How material affects maintenance and knife feel, plus what “easy to clean” really looks like.
-            </p>
+            <h3 class="card-title"><a href="/guides/what-is-an-air-fryer/">What is an air fryer?</a></h3>
+            <p class="muted">A clear explainer before you buy: how it works, what matters, what doesn’t.</p>
             <div class="actions" style="margin-top: var(--s-4);">
-              <a class="btn btn-secondary" href="/guides/cutting-boards/">Read guide</a>
+              <a class="btn btn-secondary" href="/guides/what-is-an-air-fryer/">Read</a>
             </div>
           </article>
 
           <article class="card" role="listitem">
-            <h3 class="card-title"><a href="/guides/nonstick-pans/">Nonstick pans</a></h3>
-            <p class="muted">
-              A practical framework for lifespan and heat limits without relying on marketing claims.
-            </p>
+            <h3 class="card-title"><a href="/guides/how-to-choose-an-air-fryer/">How to choose</a></h3>
+            <p class="muted">Practical checklist: capacity, controls, cleanup, and performance cues.</p>
             <div class="actions" style="margin-top: var(--s-4);">
-              <a class="btn btn-secondary" href="/guides/nonstick-pans/">Read guide</a>
+              <a class="btn btn-secondary" href="/guides/how-to-choose-an-air-fryer/">Read</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="method-title">
+    <section class="section" id="method" aria-labelledby="method-title">
       <div class="container">
         <h2 id="method-title">Trust &amp; methodology</h2>
-        <p class="muted">How we test / evaluate (and how to use our work)</p>
+        <p class="muted">How we evaluate products (without hype)</p>
 
         <div class="stack" style="margin-top: var(--s-6);">
           <p>
@@ -307,23 +256,10 @@
           <ul>
             <li><strong>Usability:</strong> controls, ergonomics, readability, and day-to-day friction.</li>
             <li><strong>Performance:</strong> consistent results under typical home conditions (varies by model).</li>
-            <li><strong>Cleanup &amp; maintenance:</strong> residue traps, dishwasher practicality, and surface durability cues.</li>
-            <li><strong>Build &amp; longevity signals:</strong> common failure points and realistic care requirements.</li>
+            <li><strong>Cleanup:</strong> residue traps, dishwasher practicality, and surfaces that clean easily.</li>
+            <li><strong>Durability cues:</strong> build quality signals and common failure points.</li>
             <li><strong>Transparency:</strong> we avoid repeating claims we can’t verify.</li>
           </ul>
-
-          <h3>What we avoid</h3>
-          <ul>
-            <li>Overpromising outcomes or assuming one tool fits everyone.</li>
-            <li>Inventing specs or performance numbers without verifiable data.</li>
-            <li>Presenting marketing language as evidence.</li>
-          </ul>
-
-          <div class="note">
-            <p class="small">
-              Want the details? Visit <a href="/how-we-test/">How we test / evaluate</a> for the full methodology and update process.
-            </p>
-          </div>
 
           <div class="note attention">
             <p class="small">
@@ -334,7 +270,7 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="faq-title">
+    <section class="section" id="faq" aria-labelledby="faq-title">
       <div class="container">
         <h2 id="faq-title">FAQ</h2>
 
@@ -345,16 +281,6 @@
               <p>
                 We may receive products for evaluation, but we aim to keep our conclusions independent.
                 If something can’t be verified through testing or documentation, we treat it cautiously and note uncertainty.
-              </p>
-            </div>
-          </details>
-
-          <details>
-            <summary>How do you choose what to recommend?</summary>
-            <div class="answer">
-              <p>
-                We focus on what affects everyday use: clarity of controls, cleanup practicality, durability cues, and consistent results.
-                We call out trade-offs rather than implying a universal “best.”
               </p>
             </div>
           </details>
@@ -379,12 +305,14 @@
 
         <div>
           <p class="footer-title">KitchenGearLab</p>
-          <p class="muted">
-            Neutral, test-driven kitchen gear reviews and buying guides.
-          </p>
+          <p class="muted">Neutral, test-driven kitchen gear reviews and buying guides.</p>
+
           <p class="footer-fineprint">
             Affiliate disclosure: Some links may be affiliate links. If you buy through them, we may earn a commission at no extra cost to you.
-            See <a href="/disclosures/">Disclosures</a>.
+            See <a href="/disclosure/">Disclosure</a>.
+          </p>
+          <p class="footer-fineprint">
+            Privacy: See <a href="/privacy/">Privacy policy</a>.
           </p>
         </div>
 
@@ -392,11 +320,13 @@
           <div class="footer-title">Links</div>
           <div class="footer-links">
             <a href="/guides/">Guides</a>
-            <a href="/reviews/">Reviews</a>
-            <a href="/how-we-test/">How we test / evaluate</a>
-            <a href="/disclosures/">Affiliate disclosure</a>
-            <a href="/editorial-policy/">Editorial policy</a>
-            <a href="/contact/">Contact</a>
+            <a href="/best-air-fryers/">Best Air Fryers</a>
+            <a href="/ninja-air-fryers/">Ninja Hub</a>
+            <a href="/ninja-vs-philips/">Ninja vs Philips</a>
+            <a href="/ninja-vs-cosori/">Ninja vs Cosori</a>
+            <a href="/disclosure/">Disclosure</a>
+            <a href="/privacy/">Privacy</a>
+            <a href="/about/">About</a>
           </div>
         </nav>
 
