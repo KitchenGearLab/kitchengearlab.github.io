@@ -1,1 +1,480 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <title>KitchenGearLab: Practical Kitchen Gear Reviews</title>
+  <meta name="description" content="Neutral, test-driven kitchen gear reviews and buying guides focused on real-world cooking performance and usability." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="light only" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <link rel="canonical" href="https://kitchengearlab.github.io/" />
+
+  <!-- CSS (single local stylesheet) -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <!-- Favicons (root) -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Open Graph (absolute URLs) -->
+  <meta property="og:site_name" content="KitchenGearLab" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://kitchengearlab.github.io/" />
+  <meta property="og:title" content="KitchenGearLab: Practical Kitchen Gear Reviews" />
+  <meta property="og:description" content="Neutral, test-driven kitchen gear reviews and buying guides focused on real-world cooking performance and usability." />
+  <meta property="og:image" content="https://kitchengearlab.github.io/assets/images/og/home-og-1200x630.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/webp" />
+  <meta property="og:image:alt" content="Minimal, clean kitchen work surface with cookware silhouettes and soft light." />
+
+  <!-- Twitter Cards (absolute URLs) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KitchenGearLab: Practical Kitchen Gear Reviews" />
+  <meta name="twitter:description" content="Neutral, test-driven kitchen gear reviews and buying guides focused on real-world cooking performance and usability." />
+  <meta name="twitter:image" content="https://kitchengearlab.github.io/assets/images/og/home-og-1200x630.webp" />
+
+  <!-- Performance hints -->
+  <link rel="preload" as="image"
+        href="/assets/images/hero/home-hero-1600x840.webp"
+        imagesrcset="/assets/images/hero/home-hero-1600x840.webp 1600w, /assets/images/hero/home-hero-2400x1260.webp 2400w"
+        imagesizes="100vw" />
+
+  <link rel="preload" as="image" href="/assets/images/brand/kitchengearlab-logo-512.png" />
+
+  <!-- Optional: preconnect (safe, low-risk) -->
+  <link rel="preconnect" href="https://kitchengearlab.github.io" crossorigin />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://kitchengearlab.github.io/#organization",
+        "name": "KitchenGearLab",
+        "url": "https://kitchengearlab.github.io/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://kitchengearlab.github.io/#website",
+        "name": "KitchenGearLab",
+        "url": "https://kitchengearlab.github.io/",
+        "publisher": { "@id": "https://kitchengearlab.github.io/#organization" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://kitchengearlab.github.io/#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://kitchengearlab.github.io/"
+          }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://kitchengearlab.github.io/#webpage",
+        "url": "https://kitchengearlab.github.io/",
+        "name": "Practical Kitchen Gear Reviews & Buying Guides",
+        "description": "Neutral, test-driven kitchen gear reviews and buying guides focused on real-world cooking performance and usability.",
+        "isPartOf": { "@id": "https://kitchengearlab.github.io/#website" },
+        "publisher": { "@id": "https://kitchengearlab.github.io/#organization" },
+        "inLanguage": "en-US",
+        "breadcrumb": { "@id": "https://kitchengearlab.github.io/#breadcrumbs" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://kitchengearlab.github.io/assets/images/og/home-og-1200x630.webp",
+          "width": 1200,
+          "height": 630
+        },
+        "mainEntityOfPage": "https://kitchengearlab.github.io/",
+        "datePublished": "2026-02-01",
+        "dateModified": "2026-02-01"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://kitchengearlab.github.io/#faq",
+        "inLanguage": "en-US",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you accept free products for reviews?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We may receive products for evaluation, but we aim to keep our conclusions independent. When we cannot verify a claim through testing or documentation, we note that it varies by model or remains unverified."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you choose what to recommend?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We focus on usability, durability cues, cleaning practicality, and consistent performance. We avoid relying on marketing claims, and we call out trade-offs instead of presenting one-size-fits-all picks."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are your guides professional advice?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Content is informational only. We share what we learned from evaluation and research so you can compare options, but you should choose gear based on your needs and constraints."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a class="brand" href="/" aria-label="KitchenGearLab home">
+          <img
+            src="/assets/images/brand/kitchengearlab-logo-512.png"
+            width="48"
+            height="48"
+            alt="KitchenGearLab logo"
+            decoding="async"
+            loading="eager"
+            fetchpriority="high"
+          />
+          <span class="brand-text">
+            <span class="brand-name">KitchenGearLab</span>
+            <span class="brand-tagline">Neutral reviews. Practical decisions.</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/how-we-test/">How we test</a></li>
+            <li><a href="/disclosures/">Disclosures</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="site-main" role="main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <h1 id="hero-title">Practical Kitchen Gear Reviews &amp; Buying Guides</h1>
+            <p class="lede">
+              KitchenGearLab publishes test-driven, brand-neutral guidance to help you compare tools you’ll actually use.
+              When something depends on the specific version, we’ll say it: <strong>varies by model</strong>.
+            </p>
+
+            <div class="hero-actions" role="group" aria-label="Primary actions">
+              <a class="btn btn-primary" href="/guides/">Browse buying guides</a>
+              <a class="btn btn-secondary" href="/how-we-test/">How we test / evaluate</a>
+            </div>
+
+            <p class="micro-note">
+              <a href="/disclosures/">Affiliate disclosure</a> applies. Content is informational only.
+            </p>
+          </div>
+
+          <div class="hero-media">
+            <picture>
+              <source
+                type="image/webp"
+                srcset="/assets/images/hero/home-hero-1600x840.webp 1600w, /assets/images/hero/home-hero-2400x1260.webp 2400w"
+                sizes="(max-width: 900px) 100vw, 50vw"
+              />
+              <img
+                src="/assets/images/hero/home-hero-1600x840.webp"
+                width="2400"
+                height="1260"
+                alt="A clean countertop with neutral-toned cookware shapes and soft daylight."
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumbs-list">
+          <li><a href="/" aria-current="page">Home</a></li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="section" aria-labelledby="intro-title">
+      <div class="container">
+        <h2 id="intro-title">What KitchenGearLab is</h2>
+        <div class="prose">
+          <p>
+            We review kitchen gear with a simple goal: help you make fewer guesses. That means focusing on
+            repeatable checks, clear trade-offs, and practical constraints like cleaning, storage, and day-to-day comfort.
+          </p>
+          <p>
+            We avoid hype. If a claim can’t be confirmed through hands-on evaluation, documentation, or reliable evidence,
+            we treat it cautiously and note uncertainty.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="featured-title">Featured guides</h2>
+          <p class="section-subtitle">Starting points for common purchases, written to be updated as models change.</p>
+        </div>
+
+        <div class="cards" role="list">
+          <article class="card" role="listitem">
+            <h3 class="card-title"><a href="/guides/air-fryers/">Air fryers</a></h3>
+            <p class="card-text">
+              What to compare beyond capacity: control clarity, cleaning practicality, and performance consistency (varies by model).
+            </p>
+            <p class="card-meta"><a class="card-link" href="/guides/air-fryers/" aria-label="Read the air fryers guide">Read guide</a></p>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3 class="card-title"><a href="/guides/chef-knives/">Chef knives</a></h3>
+            <p class="card-text">
+              Comfort and edge behavior matter more than labels. We outline what to test in your own kitchen.
+            </p>
+            <p class="card-meta"><a class="card-link" href="/guides/chef-knives/" aria-label="Read the chef knives guide">Read guide</a></p>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3 class="card-title"><a href="/guides/cutting-boards/">Cutting boards</a></h3>
+            <p class="card-text">
+              How material affects maintenance and knife feel, plus what “easy to clean” really looks like.
+            </p>
+            <p class="card-meta"><a class="card-link" href="/guides/cutting-boards/" aria-label="Read the cutting boards guide">Read guide</a></p>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3 class="card-title"><a href="/guides/nonstick-pans/">Nonstick pans</a></h3>
+            <p class="card-text">
+              A practical framework for lifespan and heat limits without relying on marketing claims.
+            </p>
+            <p class="card-meta"><a class="card-link" href="/guides/nonstick-pans/" aria-label="Read the nonstick pans guide">Read guide</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section highlight" aria-labelledby="airfryers-title">
+      <div class="container">
+        <div class="highlight-inner">
+          <div class="highlight-copy">
+            <h2 id="airfryers-title">Best Air Fryers highlight</h2>
+            <p>
+              Air fryers change quickly, and features don’t always translate to better cooking.
+              Our guide focuses on what’s observable: heat consistency, ease of cleaning, and day-to-day controls.
+            </p>
+            <ul class="checklist">
+              <li>We separate “nice to have” from “changes results.”</li>
+              <li>We note trade-offs, not just winners.</li>
+              <li>When specifics differ across versions, we say “varies by model.”</li>
+            </ul>
+            <p>
+              <a class="btn btn-primary" href="/guides/air-fryers/">Go to the Air Fryers Guide</a>
+            </p>
+          </div>
+
+          <div class="highlight-aside" aria-label="Quick links">
+            <div class="aside-card">
+              <h3 class="aside-title">Quick links</h3>
+              <ul class="aside-list">
+                <li><a href="/reviews/">Latest reviews</a></li>
+                <li><a href="/how-we-test/">How we test / evaluate</a></li>
+                <li><a href="/disclosures/">Affiliate disclosure</a></li>
+              </ul>
+              <p class="aside-note">
+                Informational-only: we share evaluation notes, not professional advice.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="method-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="method-title">Trust &amp; methodology</h2>
+          <p class="section-subtitle">How we test / evaluate (and how to use our work)</p>
+        </div>
+
+        <div class="prose">
+          <p>
+            KitchenGearLab is built around clear criteria and repeatable checks. We aim to describe what we did and what we observed,
+            so you can decide whether a recommendation fits your cooking style, budget, and space.
+          </p>
+
+          <h3>What we look for</h3>
+          <ul>
+            <li><strong>Usability:</strong> controls, ergonomics, readability, and day-to-day friction.</li>
+            <li><strong>Performance:</strong> consistent results under typical home conditions (varies by model).</li>
+            <li><strong>Cleanup &amp; maintenance:</strong> parts that trap residue, dishwasher practicality, and surface durability cues.</li>
+            <li><strong>Build &amp; longevity signals:</strong> common failure points and realistic care requirements.</li>
+            <li><strong>Transparency:</strong> we avoid repeating claims we can’t verify.</li>
+          </ul>
+
+          <h3>What we avoid</h3>
+          <ul>
+            <li>Overpromising outcomes or assuming one tool fits everyone.</li>
+            <li>Inventing specs, performance numbers, or lab-style measurements without verifiable data.</li>
+            <li>Presenting marketing language as evidence.</li>
+          </ul>
+
+          <p>
+            Want the details? Visit <a href="/how-we-test/">How we test / evaluate</a> for the full methodology and update process.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="links-title">
+      <div class="container">
+        <h2 id="links-title">More guides &amp; important links</h2>
+
+        <div class="two-col">
+          <div class="col">
+            <h3>Browse by intent</h3>
+            <ul class="link-list">
+              <li><a href="/guides/">All buying guides</a></li>
+              <li><a href="/reviews/">All reviews</a></li>
+              <li><a href="/guides/kitchen-essentials/">Kitchen essentials</a></li>
+              <li><a href="/guides/small-appliances/">Small appliances</a></li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <h3>Disclosure &amp; disclaimer</h3>
+            <ul class="link-list">
+              <li><a href="/disclosures/">Affiliate disclosure</a></li>
+              <li><a href="/editorial-policy/">Editorial policy</a></li>
+              <li><a href="/contact/">Contact</a></li>
+            </ul>
+            <p class="small">
+              Informational-only disclaimer: KitchenGearLab provides general information for comparison and education.
+              We don’t provide professional advice, and product details can change over time (varies by model).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 id="faq-title">FAQ</h2>
+
+        <div class="faq">
+          <details>
+            <summary>Do you accept free products for reviews?</summary>
+            <div class="prose">
+              <p>
+                We may receive products for evaluation, but we aim to keep our conclusions independent.
+                If something can’t be verified through testing or documentation, we treat it cautiously and note uncertainty.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>How do you choose what to recommend?</summary>
+            <div class="prose">
+              <p>
+                We focus on what affects everyday use: clarity of controls, cleanup practicality, durability cues, and consistent results.
+                We call out trade-offs rather than implying a universal “best.”
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Is your content professional advice?</summary>
+            <div class="prose">
+              <p>
+                No. Content is informational only. We share evaluation notes so you can compare options and decide what fits your needs.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img
+            src="/assets/images/brand/kitchengearlab-logo-512.png"
+            width="40"
+            height="40"
+            alt="KitchenGearLab logo"
+            loading="lazy"
+            decoding="async"
+          />
+          <p class="footer-name">KitchenGearLab</p>
+          <p class="footer-note">Neutral, test-driven kitchen gear reviews and buying guides.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer">
+          <ul class="footer-links">
+            <li><a href="/guides/">Guides</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/how-we-test/">How we test / evaluate</a></li>
+            <li><a href="/disclosures/">Affiliate disclosure</a></li>
+            <li><a href="/editorial-policy/">Editorial policy</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-legal">
+        <p class="small">
+          Affiliate disclosure: Some links may be affiliate links. If you buy through them, we may earn a commission at no extra cost to you.
+          See <a href="/disclosures/">Disclosures</a>.
+        </p>
+        <p class="small">
+          Informational-only disclaimer: Content is for general information and comparison. Product details can change and performance varies by model.
+        </p>
+        <p class="small">
+          <span aria-hidden="true">©</span>
+          <span>KitchenGearLab</span>
+          <span class="sr-only">Copyright</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
