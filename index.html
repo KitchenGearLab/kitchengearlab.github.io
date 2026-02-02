@@ -39,14 +39,30 @@
   <meta name="twitter:title" content="KitchenGearLab: Practical Kitchen Gear Reviews" />
   <meta name="twitter:description" content="Calm, test-driven kitchen gear reviews and buying guides focused on real-world cooking performance and usability." />
   <meta name="twitter:image" content="https://kitchengearlab.github.io/assets/images/og/home-og-1200x630.webp" />
+  <meta name="twitter:image:alt" content="Warm premium kitchen counter with modern appliances in soft natural daylight." />
 
-  <!-- Performance -->
+  <!-- Performance: Hero preload (match sizes + srcset) -->
   <link rel="preload" as="image"
         href="https://kitchengearlab.github.io/assets/images/hero/home-hero-1600x840.webp"
         imagesrcset="https://kitchengearlab.github.io/assets/images/hero/home-hero-1600x840.webp 1600w, https://kitchengearlab.github.io/assets/images/hero/home-hero-2400x1260.webp 2400w"
-        imagesizes="100vw" />
+        imagesizes="(max-width: 900px) 100vw, 40vw" />
+
+  <!-- Optional: logo preload (tiny file, ok) -->
   <link rel="preload" as="image"
         href="https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-512.png" />
+
+  <!-- GA4: connection hints -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+
+  <!-- ✅ Google Analytics 4 (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PNC93WEF7E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PNC93WEF7E', { anonymize_ip: true, send_page_view: true });
+  </script>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -84,7 +100,7 @@
         "@type": "WebPage",
         "@id": "https://kitchengearlab.github.io/#webpage",
         "url": "https://kitchengearlab.github.io/",
-        "name": "Practical Kitchen Gear Reviews & Buying Guides",
+        "name": "KitchenGearLab: Practical Kitchen Gear Reviews",
         "description": "Calm, test-driven kitchen gear reviews and buying guides focused on real-world cooking performance and usability.",
         "isPartOf": { "@id": "https://kitchengearlab.github.io/#website" },
         "publisher": { "@id": "https://kitchengearlab.github.io/#organization" },
@@ -99,6 +115,36 @@
         "mainEntityOfPage": "https://kitchengearlab.github.io/",
         "datePublished": "2026-02-01",
         "dateModified": "2026-02-01"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://kitchengearlab.github.io/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you use affiliate links?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Some links may earn a commission at no extra cost to you. Disclosures are explicit and separate so you can evaluate recommendations with context."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you evaluate kitchen gear?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We use repeatable checks focused on usability, real-world performance, cleanup, and durability cues. Our goal is to explain trade-offs so you can choose what fits your kitchen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you update guides when models change?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We revise key recommendations when availability, generations, or meaningful product changes occur, and we show a Last updated date on major pages."
+            }
+          }
+        ]
       }
     ]
   }
@@ -120,7 +166,6 @@
               alt=""
               loading="eager"
               decoding="async"
-              fetchpriority="high"
             />
           </span>
           <span>
@@ -129,7 +174,6 @@
           </span>
         </a>
 
-        <!-- Short professional menu (these exist in your repo) -->
         <nav class="nav" aria-label="Primary">
           <a href="/guides/">Guides</a>
           <a href="/best-air-fryers/">Best Air Fryers</a>
@@ -149,11 +193,17 @@
 
             <p class="lead">
               KitchenGearLab helps you choose kitchen tools with confidence.
-              We focus on real-world usability, observable performance, and practical trade-offs — not hype.
+              We focus on real-world usability, observable performance, and practical trade-offs, not hype.
             </p>
 
+            <ul class="muted" style="margin-top: var(--s-4); padding-left: 1.1rem;">
+              <li>Shortlists you can trust (with trade-offs explained).</li>
+              <li>Practical “what matters” criteria before you buy.</li>
+              <li>Updates when models and availability change.</li>
+            </ul>
+
             <div class="actions" role="group" aria-label="Primary actions">
-              <a class="btn btn-accent" href="/guides/">Browse buying guides</a>
+              <a class="btn btn-accent" href="/best-air-fryers/">Start with Best Air Fryers</a>
               <a class="btn btn-secondary" href="#method">How we evaluate</a>
             </div>
 
@@ -177,8 +227,8 @@
               />
               <img
                 src="https://kitchengearlab.github.io/assets/images/hero/home-hero-1600x840.webp"
-                width="2400"
-                height="1260"
+                width="1600"
+                height="840"
                 alt="Warm premium kitchen counter with modern appliances in soft natural daylight."
                 loading="eager"
                 decoding="async"
@@ -223,10 +273,34 @@
 
           <article class="card" role="listitem">
             <h3 class="card-title"><a href="/guides/are-air-fryers-worth-it/">Are air fryers worth it?</a></h3>
-            <p class="muted">When it makes sense — and when it doesn’t.</p>
+            <p class="muted">When it makes sense, and when it doesn’t.</p>
             <div class="actions" style="margin-top: var(--s-4);">
               <a class="btn btn-secondary" href="/guides/are-air-fryers-worth-it/">Read</a>
             </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="popular-title">
+      <div class="container">
+        <h2 id="popular-title">Popular right now</h2>
+        <p class="muted">Fast paths to the most decision-driven pages.</p>
+
+        <div class="grid cols-3" role="list" style="margin-top: var(--s-6);">
+          <article class="card" role="listitem">
+            <h3 class="card-title"><a href="/best-air-fryers/">Best Air Fryers</a></h3>
+            <p class="muted">Shortlist options by size, controls, and results consistency.</p>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3 class="card-title"><a href="/guides/how-to-choose-an-air-fryer/">How to choose an air fryer</a></h3>
+            <p class="muted">A clean checklist: capacity, baskets, cleanup, and noise.</p>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3 class="card-title"><a href="/guides/are-air-fryers-worth-it/">Are they worth it?</a></h3>
+            <p class="muted">When an air fryer truly saves time, and when it’s clutter.</p>
           </article>
         </div>
       </div>
@@ -247,21 +321,58 @@
             <li><strong>Usability:</strong> controls, ergonomics, day-to-day friction.</li>
             <li><strong>Performance:</strong> consistency under normal home use.</li>
             <li><strong>Cleanup:</strong> residue traps, dishwasher practicality.</li>
-            <li><strong>Durability cues:</strong> realistic longevity signals.</li>
-            <li><strong>Transparency:</strong> no unverified claims.</li>
+            <li><strong>Durability cues:</strong> realistic longevity signals (fit/finish, hinges, coatings).</li>
+            <li><strong>Transparency:</strong> no unverified claims, no brand worship.</li>
           </ul>
 
           <div class="note">
-            <p class="small">
-              Disclosures are kept separate and explicit. See <a href="/disclosure/">Disclosure</a>.
+            <p class="small" style="margin: 0;">
+              <strong>Example checks we run:</strong> preheat + stability, batch consistency, basket cleanup friction,
+              footprint/storage reality, and “daily annoyances” that reviews often skip.
+            </p>
+          </div>
+
+          <div class="note">
+            <p class="small" style="margin: 0;">
+              Affiliate disclosure is explicit and separate. See <a href="/disclosure/">Disclosure</a>.
             </p>
           </div>
 
           <div class="note attention">
-            <p class="small">
-              Informational only. Product details change over time and performance can vary by model.
+            <p class="small" style="margin: 0;">
+              Informational only. Product details change over time and performance can vary by model and usage.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 id="faq-title">FAQ</h2>
+        <p class="muted">Quick answers to keep things simple.</p>
+
+        <div class="stack" style="margin-top: var(--s-6);">
+          <article class="card">
+            <h3 class="card-title">Do you use affiliate links?</h3>
+            <p class="muted">
+              Some links may earn a commission at no extra cost to you. Disclosures are explicit and separate so you can evaluate recommendations with context.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">How do you evaluate kitchen gear?</h3>
+            <p class="muted">
+              We use repeatable checks focused on usability, real-world performance, cleanup, and durability cues. Our goal is to explain trade-offs so you can choose what fits your kitchen.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Do you update guides when models change?</h3>
+            <p class="muted">
+              Yes. We revise key recommendations when availability, generations, or meaningful product changes occur, and we show a Last updated date on major pages.
+            </p>
+          </article>
         </div>
       </div>
     </section>
