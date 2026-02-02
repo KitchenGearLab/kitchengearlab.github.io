@@ -47,8 +47,7 @@
         imagesrcset="https://kitchengearlab.github.io/assets/images/hero/home-hero-1600x840.webp 1600w, https://kitchengearlab.github.io/assets/images/hero/home-hero-2400x1260.webp 2400w"
         imagesizes="(max-width: 900px) 100vw, 40vw" />
 
-  <link rel="preload" as="image"
-        href="https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-512.png" />
+  <link rel="preload" as="image" href="https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-512.png" />
 
   <!-- GA4: connection hints -->
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
@@ -60,7 +59,12 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-PNC93WEF7E', { anonymize_ip: true, send_page_view: true });
+
+    // Privacy-minded configuration (best effort)
+    gtag('set', 'allow_google_signals', false);
+    gtag('set', 'allow_ad_personalization_signals', false);
+
+    gtag('config', 'G-PNC93WEF7E', { send_page_view: true });
   </script>
 
   <!-- Structured Data -->
@@ -113,7 +117,7 @@
         },
         "mainEntityOfPage": "https://kitchengearlab.github.io/",
         "datePublished": "2026-02-01",
-        "dateModified": "2026-02-01"
+        "dateModified": "2026-02-02"
       }
     ]
   }
@@ -128,7 +132,7 @@
       <div class="header-inner">
         <a class="brand" href="/" aria-label="KitchenGearLab home">
           <img
-            src="https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-512.png"
+            src="/assets/images/brand/kitchengearlab-logo-512.png"
             width="32"
             height="32"
             alt=""
@@ -166,6 +170,12 @@
               We focus on real-world usability, observable performance, and practical trade-offs, not hype.
             </p>
 
+            <div class="note" style="margin: 0 0 1rem 0;">
+              <p class="small" style="margin:0;">
+                <strong>How we stay neutral:</strong> no sponsored rankings, no brand worship. We explain trade-offs and update pages when models change.
+              </p>
+            </div>
+
             <ul class="checklist">
               <li>Shortlists you can trust (with trade-offs explained).</li>
               <li>Practical “what matters” criteria before you buy.</li>
@@ -184,7 +194,7 @@
               <a href="/privacy/">Privacy</a>
             </p>
 
-            <p class="small">Last updated: 2026-02-01</p>
+            <p class="small">Last updated: 2026-02-02</p>
           </div>
 
           <div class="hero-media" aria-label="Hero image">
@@ -254,14 +264,12 @@
         </div>
 
         <div class="cards" role="list">
-          <!-- ✅ UPDATED: now under /best-air-fryers/ -->
           <article class="card top-pick" role="listitem">
             <h3 class="card-title"><a href="/best-air-fryers/ninja-vs-philips/">Ninja vs Philips</a></h3>
             <p class="card-text">A calm side-by-side comparison to pick the right style for your kitchen.</p>
             <p class="card-meta"><a class="card-link" href="/best-air-fryers/ninja-vs-philips/">Compare</a></p>
           </article>
 
-          <!-- ✅ UPDATED: now under /best-air-fryers/ -->
           <article class="card" role="listitem">
             <h3 class="card-title"><a href="/best-air-fryers/ninja-vs-cosori/">Ninja vs Cosori</a></h3>
             <p class="card-text">Trade-offs: controls, results consistency, noise, and cleanup.</p>
