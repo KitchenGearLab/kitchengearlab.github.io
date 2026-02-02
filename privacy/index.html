@@ -42,8 +42,7 @@
   <meta name="twitter:image:alt" content="Minimalist editorial trust image with calm, clean shapes and soft daylight." />
 
   <!-- Performance: brand preload -->
-  <link rel="preload" as="image"
-        href="https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-512.png" />
+  <link rel="preload" as="image" href="/assets/images/brand/kitchengearlab-logo-512.png" />
 
   <!-- GA4: connection hints -->
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
@@ -55,8 +54,14 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
     // Privacy-minded configuration (best effort)
-    gtag('config', 'G-PNC93WEF7E', { anonymize_ip: true, send_page_view: true });
+    // Reduce Google signals & ad personalization signals.
+    gtag('set', 'allow_google_signals', false);
+    gtag('set', 'allow_ad_personalization_signals', false);
+
+    // Page view measurement
+    gtag('config', 'G-PNC93WEF7E', { send_page_view: true });
   </script>
 
   <!-- Structured Data -->
@@ -125,7 +130,7 @@
       <div class="header-inner">
         <a class="brand" href="/" aria-label="KitchenGearLab home">
           <img
-            src="https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-512.png"
+            src="/assets/images/brand/kitchengearlab-logo-512.png"
             width="32"
             height="32"
             alt=""
@@ -183,7 +188,7 @@
 
           <h2>What we collect</h2>
           <ul>
-            <li><strong>Analytics data:</strong> page views, approximate location (city/region), device/browser type, and interactions (e.g., clicks).</li>
+            <li><strong>Analytics data:</strong> page views, approximate location (city/region), device/browser type, and basic engagement signals (when available).</li>
             <li><strong>Cookies:</strong> may be used by analytics and affiliate partners to measure traffic and referrals.</li>
           </ul>
 
@@ -205,7 +210,7 @@
           <p class="muted">
             We use Google Analytics 4 (GA4) to measure site usage and content performance.
             This helps us understand which pages are useful and where to improve.
-            We configure analytics in a privacy-minded way (for example, IP anonymization where supported).
+            We configure analytics in a privacy-minded way (for example, disabling Google signals and ad personalization signals where supported).
           </p>
 
           <h2>Affiliate links</h2>
@@ -216,7 +221,7 @@
 
           <h2>Third parties</h2>
           <p class="muted">
-            Third-party services (analytics providers, affiliate networks, or embedded content) may set cookies or process usage data under their own policies.
+            Third-party services (analytics providers, affiliate networks, retailers, or embedded content) may set cookies or process usage data under their own policies.
           </p>
 
           <h2>Your choices</h2>
