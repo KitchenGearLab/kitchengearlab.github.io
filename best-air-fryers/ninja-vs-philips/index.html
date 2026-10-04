@@ -244,6 +244,29 @@
   ]
 }
   </script>
+
+  <style>
+    /* Local hero spacing; keep the shared site styles unchanged. */
+    .hero { padding: var(--s-7) 0 var(--s-6); }
+    .hero-grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--s-6);
+    }
+    .hero-copy { padding: clamp(20px, 2vw, 24px); }
+    .hero-copy, .hero-media { min-width: 0; }
+    .hero-copy p { margin-bottom: var(--s-3); }
+    .hero-copy .lead { margin-bottom: var(--s-4); }
+    .hero-copy .micro-note { margin-top: var(--s-3); }
+    .hero-copy > :last-child { margin-bottom: 0; }
+    .hero-actions + p { margin-top: var(--s-3); }
+    .hero-media img { width: 100%; height: auto; }
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
