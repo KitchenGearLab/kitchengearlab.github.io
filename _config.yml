@@ -1,3 +1,5 @@
+# Disable the GitHub Pages default theme; all public pages use the site stylesheet.
+theme: null
 # GitHub Pages publishes main:/ through its managed Jekyll build.
 # Keep build inputs and local evidence out of the public destination.
 exclude:
