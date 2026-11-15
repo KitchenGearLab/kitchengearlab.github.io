@@ -70,6 +70,10 @@ def load_translations():
     for key in preserved:
         if catalogue[key]['fr'] is not None: raise ValueError('Translated and preserved: '+key)
         catalogue[key]['fr']=catalogue[key]['en']
+    from seasonal_hero import ALT_TEXT
+    seasonal_alts={ALT_TEXT['en'][season]:ALT_TEXT['fr'][season] for season in ('classic','christmas')}
+    for value in catalogue.values():
+        if value['en'] in seasonal_alts:value['fr']=seasonal_alts[value['en']]
     return catalogue
 
 def missing():
@@ -160,6 +164,9 @@ def build(check=False):
     missing=[k for k,v in catalogue.items() if not v['fr']]
     if missing: raise ValueError('Incomplete translation: '+', '.join(missing))
     translations={v['en']:v['fr'] for v in catalogue.values()}
+    # Seasonal alt text is maintained with its static hero, independently of the editorial catalogue.
+    from seasonal_hero import ALT_TEXT
+    translations.update({ALT_TEXT['en'][season]:ALT_TEXT['fr'][season] for season in ('classic','christmas')})
     rows=json.loads(INVENTORY.read_text(encoding='utf8')); routes={r['en'] for r in rows}
     changed=[]
     def emit(p,s):

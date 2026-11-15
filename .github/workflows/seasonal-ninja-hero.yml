@@ -1,0 +1,37 @@
+name: Seasonal Ninja hero
+
+on:
+  schedule:
+    # Off the busy start of the hour; Python also checks the actual Toronto date.
+    - cron: '17 0 * * *'
+      timezone: America/Toronto
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: seasonal-ninja-hero
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    if: github.repository == 'KitchenGearLab/kitchengearlab.github.io' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write # Only the two collection HTML files are committed.
+      pages: write # A GITHUB_TOKEN push does not initiate a Pages build.
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - name: Check out the default branch
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Test seasonal boundaries and safeguards
+        run: python3 -m unittest discover -s scripts -p test_seasonal_hero.py -v
+      - name: Reconcile both heroes and confirm the normal Pages build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/seasonal_workflow.py

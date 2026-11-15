@@ -5,6 +5,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
 import xml.etree.ElementTree as ET
 from bilingual import ROOT, ORIGIN, load_translations, strip_bilingual, norm, values
+from seasonal_hero import without_hero
 
 class Document(HTMLParser):
     def __init__(self,source):
@@ -40,7 +41,9 @@ for row in rows:
     original=baseline[row['file']].replace('"inLanguage": "en-US"','"inLanguage": "en-CA"').replace('<html lang="en-US">','<html lang="en-CA">').replace('property="og:locale" content="en_US"','property="og:locale" content="en_CA"')
     if row['en']=='/best-air-fryers/ninja-air-fryers/':
         original=original.replace('If you cook one item at a time, a single basket is simpler, easier to clean, and usually better value.','If you cook one item at a time, a single basket gives you one vessel to manage. Compare care instructions and current seller terms.')
-    ck(strip_bilingual(en)==original,'English content preserved '+row['en'])
+    current=strip_bilingual(en)
+    if row['en']=='/ninja/':current,original=without_hero(current),without_hero(original)
+    ck(current==original,'English content preserved '+row['en'])
     for lang in ['en','fr']:
         path=row[lang]; source=sources[path]; d=documents[path]; locale=lang+'-CA'
         ck(d.attrs('html')[0].get('lang')==locale,'html lang '+path)

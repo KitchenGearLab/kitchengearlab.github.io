@@ -1,0 +1,254 @@
+{
+  "width": 1672,
+  "height": 941,
+  "widths": [
+    480,
+    640,
+    960,
+    1280,
+    1672
+  ],
+  "encoding": {
+    "avif": {
+      "quality": 72,
+      "speed": 5,
+      "subsampling": "4:4:4"
+    },
+    "webp": {
+      "quality": 88,
+      "method": 6
+    },
+    "jpg": {
+      "quality": 90,
+      "subsampling": 0,
+      "optimize": true,
+      "progressive": true
+    }
+  },
+  "seasons": {
+    "classic": {
+      "original": "_originals/seasonal-ninja/ninja-collection-classic.png",
+      "sha256": "a31007957451f2634605324afe3d320fede9bed3e32dcab5a154952349fd3cf3",
+      "bytes": 2226544,
+      "assets": [
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-classic-480.avif",
+          "width": 480,
+          "height": 270,
+          "bytes": 23726,
+          "sha256": "3fd37826270a0c6007ad346ea0379f3761778bd0339d695d38f9d8d44417923b"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-classic-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 30528,
+          "sha256": "315bfd33761aeada63bb0799ad8c404ebae0015cc409e433272b1be23caf87a7"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-classic-480.jpg",
+          "width": 480,
+          "height": 270,
+          "bytes": 51457,
+          "sha256": "63bddc82ed631264d1d3a1577a40b86ebed40256f6f33457799294cdf0e945a7"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-classic-640.avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 36772,
+          "sha256": "733820deab013d8c6240364bb1987eadbe27b69a924b4afa0fc8ccfe24bb5cbb"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-classic-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 48106,
+          "sha256": "aafc6e32d4de483aef5060f39f85325437869ba24f2ed2424bc8a53fb64255a8"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-classic-640.jpg",
+          "width": 640,
+          "height": 360,
+          "bytes": 82855,
+          "sha256": "02a8077944c9ed6d30d0d0c47e6f583eaa8cb4955cddc472243231c4735a0a16"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-classic-960.avif",
+          "width": 960,
+          "height": 540,
+          "bytes": 70169,
+          "sha256": "150ea8f08b87bf9d01aadc1307bc5fc5e34f6db12e68efd677104f9224e9dd85"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-classic-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 90966,
+          "sha256": "5a2694549089e69e13a0490ca48fd6a43a9b7c7b689853a72bacad5692029a65"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-classic-960.jpg",
+          "width": 960,
+          "height": 540,
+          "bytes": 163485,
+          "sha256": "c43a843c3653f9126b84591f2feefb3cdce17ed2cc33d31c8f1d9871267d0710"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-classic-1280.avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 108017,
+          "sha256": "c4b3d5eb2d03001aef96a07f776d780749f992213aeb9272099594df901b8327"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-classic-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 143646,
+          "sha256": "d036b2116cbc2f3d697ca4158048e5d24bc7d04b1914fd0117200b7f766b26e8"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-classic-1280.jpg",
+          "width": 1280,
+          "height": 720,
+          "bytes": 261278,
+          "sha256": "a52cec65b60af7e67bdc2247f0a983b10b21c7f5feb28855a01430bec955ce16"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-classic-1672.avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 157252,
+          "sha256": "c423533311c6bb32a3367118b303663b2da6289c359ec4927440da3cf2b4b60c"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-classic-1672.webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 213818,
+          "sha256": "00c1cff7404f7c8b3e3914513681e7a730bb97f416e853f5b3ac53210d87cbbc"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-classic-1672.jpg",
+          "width": 1672,
+          "height": 941,
+          "bytes": 398504,
+          "sha256": "ae846f016afb5e0260f21af6ca2c258b125094cb9b458997d35a1e519ed395b9"
+        }
+      ]
+    },
+    "christmas": {
+      "original": "_originals/seasonal-ninja/ninja-collection-christmas.png",
+      "sha256": "e8e14b6b8b0de6acd120c0bbd2c6bbdcf5c151390b325f6ac59d9e31677046a6",
+      "bytes": 2804069,
+      "assets": [
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-christmas-480.avif",
+          "width": 480,
+          "height": 270,
+          "bytes": 43063,
+          "sha256": "c57115938e94a9b480c63a6ccd1086827c06fdf13b32712632f1ff48512c450a"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-christmas-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 53308,
+          "sha256": "784d5590578535fc508099838e6c87296fa6fad704912dfa9cc78caf3e35eca2"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-christmas-480.jpg",
+          "width": 480,
+          "height": 270,
+          "bytes": 80938,
+          "sha256": "8042e8dc03cba7602764775b0517645da3b36238bec6dda93f2a76e2d94b416f"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-christmas-640.avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 68095,
+          "sha256": "d8620215b959710980a21469d4fbc041ba30f2362ca1c791a4fed92fd45cf298"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-christmas-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 86204,
+          "sha256": "e867f62eec5d46547ed92cda6e2b04b20011c7b5ab127800543a920066a13319"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-christmas-640.jpg",
+          "width": 640,
+          "height": 360,
+          "bytes": 133119,
+          "sha256": "8e3fc65bd7a5b267255ed369f8bc3ec6c9cb7bd081ed46cf8bdb255d5094b7f7"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-christmas-960.avif",
+          "width": 960,
+          "height": 540,
+          "bytes": 132475,
+          "sha256": "36b2e0fe737c7cb8b603467fcda83353c8fc8f4306d4ebb8eda5ddb38eee5670"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-christmas-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 167196,
+          "sha256": "257a3c450b20d14b791d8ebf2f8302935d4b35d6b00c24ed7626c7078426cadb"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-christmas-960.jpg",
+          "width": 960,
+          "height": 540,
+          "bytes": 267981,
+          "sha256": "72a050a6890df52466501343cc09ac8bfbc37418018b5fbd9fc83a2957f02d26"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-christmas-1280.avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 199682,
+          "sha256": "2b6be6e1d7ce557441457f2a1e6e042ac69aa441ca7e0c8c6b7fa5257c053f6f"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-christmas-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 265652,
+          "sha256": "f7cfb0d61b9f782064d1029c011bc0f1d875972db9c6198cd18aa0dd718f529e"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-christmas-1280.jpg",
+          "width": 1280,
+          "height": 720,
+          "bytes": 426681,
+          "sha256": "c58428adc5468373e934ab8e7860573aa7903cf20ec58b85d8a1a28bb99acdaa"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-christmas-1672.avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 285814,
+          "sha256": "b8b3c6a37ef59ac5d24fc4a5bd3900a83be52dc61dcb10ef4517cb6374f7adca"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-christmas-1672.webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 393598,
+          "sha256": "5ddda4bd6375fe1e41ae5b0cbf39ebde1abe9622d5db884d516b249176c1f0f6"
+        },
+        {
+          "file": "assets/images/hero/ninja-collection/ninja-collection-christmas-1672.jpg",
+          "width": 1672,
+          "height": 941,
+          "bytes": 645777,
+          "sha256": "972247482eb7746f0a26eee0dd12b4c6b37d162ee3aa5ee517ddb4338c57e557"
+        }
+      ]
+    }
+  }
+}
