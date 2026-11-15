@@ -3,9 +3,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 from unittest.mock import patch
 from zoneinfo import ZoneInfo
-from seasonal_hero import ROOT, PAGES, WIDTHS, ALT_TEXT, season_for, picture, hero, without_hero, replace_hero, update, validate_assets
+from seasonal_hero import ROOT, PAGES, HOME_PAGES, ALL_PAGES, WIDTHS, ALT_TEXT, homepage_picture, homepage_hero, replace_homepage_hero, without_homepage_hero, season_for, picture, hero, without_hero, replace_hero, update, validate_assets
 from seasonal_workflow import ensure_pages, needs_build
 import seasonal_workflow
+
+def fixtures(root,season):
+    for pages,picture_fn in ((PAGES,picture),(HOME_PAGES,homepage_picture)):
+        for lang,path in pages.items():
+            p=root/path;p.parent.mkdir(parents=True,exist_ok=True)
+            p.write_text('<section class="collection-hero" id="ninja-discovery">'+picture_fn(season,lang)+'</section>',encoding='utf8')
 
 class CalendarTests(unittest.TestCase):
     def test_every_year_and_boundary(self):
@@ -24,7 +30,7 @@ class CalendarTests(unittest.TestCase):
         with self.assertRaises(ValueError):season_for(datetime(2026,11,1))
 
 class AssetAndPageTests(unittest.TestCase):
-    def test_all_30_assets_and_dimensions(self):validate_assets()
+    def test_all_60_assets_and_dimensions(self):validate_assets()
     def test_each_season_and_language_markup(self):
         for season in ('classic','christmas'):
             for lang in PAGES:
@@ -51,16 +57,14 @@ class AssetAndPageTests(unittest.TestCase):
     def test_missed_runs_reconcile_current_season(self):
         with tempfile.TemporaryDirectory() as temp:
             root=Path(temp)
-            for lang,path in PAGES.items():
-                p=root/path;p.parent.mkdir(parents=True,exist_ok=True)
-                p.write_text('<section class="collection-hero">'+picture('christmas',lang)+'</section>',encoding='utf8')
+            fixtures(root,'christmas')
             with patch('seasonal_hero.validate_assets'):
                 first=update(root,datetime(2028,1,5,tzinfo=timezone.utc))
-                self.assertEqual(set(first['changed']),set(PAGES.values()))
-                before={p:(root/p).stat().st_mtime_ns for p in PAGES.values()}
+                self.assertEqual(set(first['changed']),set(ALL_PAGES))
+                before={p:(root/p).stat().st_mtime_ns for p in ALL_PAGES}
                 second=update(root,datetime(2028,1,6,tzinfo=timezone.utc))
                 self.assertEqual(second['changed'],[])
-                self.assertEqual(before,{p:(root/p).stat().st_mtime_ns for p in PAGES.values()})
+                self.assertEqual(before,{p:(root/p).stat().st_mtime_ns for p in ALL_PAGES})
                 self.assertEqual(update(root,datetime(2028,11,4,tzinfo=timezone.utc))['season'],'christmas')
     def test_bilingual_references_match_even_before_a_delayed_run(self):
         import re
@@ -70,6 +74,50 @@ class AssetAndPageTests(unittest.TestCase):
             current=re.search(r'data-seasonal-ninja-hero="(classic|christmas)"',markup)[1]
             seasons.add(current);self.assertEqual(markup,picture(current,lang))
         self.assertEqual(len(seasons),1)
+
+class HomepageTests(unittest.TestCase):
+    def test_bounded_replacement_and_preload_removal(self):
+        for lang,path in HOME_PAGES.items():
+            source=(ROOT/path).read_text(encoding='utf8')
+            for season in ('classic','christmas'):
+                after=replace_homepage_hero(source,season,lang)
+                self.assertEqual(without_homepage_hero(after),without_homepage_hero(source))
+                self.assertEqual(replace_homepage_hero(after,season,lang),after)
+                self.assertEqual(homepage_hero(after),homepage_picture(season,lang))
+                self.assertNotIn('rel="preload" as="image"',after)
+                self.assertNotIn('/hero/home-hero-',homepage_hero(after))
+    def test_homepage_geometry_and_loading(self):
+        for lang in HOME_PAGES:
+            for season in ('classic','christmas'):
+                markup=homepage_picture(season,lang)
+                self.assertEqual(markup.count('<img '),1)
+                self.assertEqual(markup.count('<source '),2)
+                self.assertEqual(markup.count('fetchpriority="high"'),1)
+                self.assertIn('width="1672" height="941"',markup)
+                self.assertIn('aspect-ratio:1600/840;object-fit:cover;object-position:center',markup)
+                self.assertIn('loading="eager"',markup)
+                self.assertEqual(markup.count('sizes="'),3)
+    def test_duplicate_or_unknown_preload_rejected(self):
+        source=(ROOT/'index.html').read_text(encoding='utf8')
+        with self.assertRaises(ValueError):replace_homepage_hero(source+homepage_hero(source),'classic','en')
+        with self.assertRaises(ValueError):replace_homepage_hero(source+'<link rel="preload" as="image" href="/unknown.jpg" />','classic','en')
+    def test_stored_home_and_collection_seasons_match(self):
+        import re
+        seasons=[]
+        for pages,get_picture,render,attribute in ((PAGES,hero,picture,'ninja'),(HOME_PAGES,homepage_hero,homepage_picture,'homepage')):
+            for lang,path in pages.items():
+                markup=get_picture((ROOT/path).read_text(encoding='utf8'))
+                season=re.search('data-seasonal-'+attribute+'-hero="(classic|christmas)"',markup)[1]
+                seasons.append(season);self.assertEqual(markup,render(season,lang))
+        self.assertEqual(len(set(seasons)),1)
+    def test_all_four_pages_validate_before_writing(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp);fixtures(root,'christmas')
+            (root/'fr/index.html').write_text('invalid',encoding='utf8')
+            before={p:(root/p).read_bytes() for p in ALL_PAGES}
+            with patch('seasonal_hero.validate_assets'):
+                with self.assertRaises(ValueError):update(root,datetime(2028,1,5,tzinfo=timezone.utc))
+            self.assertEqual(before,{p:(root/p).read_bytes() for p in ALL_PAGES})
 
 class DeploymentTests(unittest.TestCase):
     CONFIG={'build_type':'legacy','source':{'branch':'main','path':'/'}}
@@ -125,9 +173,7 @@ class GitIntegrationTests(unittest.TestCase):
             run('clone',str(remote),str(checkout))
             run('config','user.name','Seasonal fixture',cwd=checkout);run('config','user.email','fixture@example.invalid',cwd=checkout)
             initial='classic' if season_for()=='christmas' else 'christmas'
-            for lang,path in PAGES.items():
-                p=checkout/path;p.parent.mkdir(parents=True,exist_ok=True)
-                p.write_text('<section class="collection-hero">'+picture(initial,lang)+'</section>',encoding='utf8')
+            fixtures(checkout,initial)
             (checkout/'unrelated.txt').write_text('unchanged\n',encoding='utf8')
             run('add','.',cwd=checkout);run('commit','-m','fixture',cwd=checkout);run('push','origin','main',cwd=checkout)
             before=run('rev-parse','HEAD',cwd=checkout)
@@ -137,7 +183,7 @@ class GitIntegrationTests(unittest.TestCase):
                 seasonal_workflow.main();second=run('rev-parse','HEAD',cwd=checkout)
                 self.assertEqual(first,second)
             self.assertEqual(run('rev-list','--count','HEAD',cwd=checkout),'2')
-            self.assertEqual(set(run('diff-tree','--no-commit-id','--name-only','-r','HEAD',cwd=checkout).splitlines()),set(PAGES.values()))
+            self.assertEqual(set(run('diff-tree','--no-commit-id','--name-only','-r','HEAD',cwd=checkout).splitlines()),set(ALL_PAGES))
             self.assertEqual(run('status','--porcelain',cwd=checkout),'')
             self.assertEqual((checkout/'unrelated.txt').read_text(encoding='utf8'),'unchanged\n')
 

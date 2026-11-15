@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
-      contents: write # Only the two collection HTML files are committed.
+      contents: write # Only the EN/FR homepage and collection HTML files are committed.
       pages: write # A GITHUB_TOKEN push does not initiate a Pages build.
     env:
       PYTHONUTF8: '1'
@@ -31,7 +31,7 @@ jobs:
           fetch-depth: 1
       - name: Test seasonal boundaries and safeguards
         run: python3 -m unittest discover -s scripts -p test_seasonal_hero.py -v
-      - name: Reconcile both heroes and confirm the normal Pages build
+      - name: Reconcile all four pages and confirm the normal Pages build
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 scripts/seasonal_workflow.py

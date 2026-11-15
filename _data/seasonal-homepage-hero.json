@@ -1,0 +1,254 @@
+{
+  "width": 1672,
+  "height": 941,
+  "widths": [
+    480,
+    640,
+    960,
+    1280,
+    1672
+  ],
+  "encoding": {
+    "avif": {
+      "quality": 72,
+      "speed": 5,
+      "subsampling": "4:4:4"
+    },
+    "webp": {
+      "quality": 88,
+      "method": 6
+    },
+    "jpg": {
+      "quality": 90,
+      "subsampling": 0,
+      "optimize": true,
+      "progressive": true
+    }
+  },
+  "seasons": {
+    "classic": {
+      "original": "_originals/seasonal-homepage/homepage-classic.png",
+      "sha256": "b91007aec8380d7e65c251625ab8d5e45d23954b4e5d8155e03eb0826bd573c5",
+      "bytes": 1908910,
+      "assets": [
+        {
+          "file": "assets/images/hero/homepage/homepage-classic-480.avif",
+          "width": 480,
+          "height": 270,
+          "bytes": 16553,
+          "sha256": "7c539ab5033ecc73b69173787ecd48ac89ccda9a2ff8389ee2c3e192e2549bde"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-classic-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 21350,
+          "sha256": "d187b2c4ef16d1fb8f0e2dc5840024fd0a7042f7797ae4c97882236c52e74e26"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-classic-480.jpg",
+          "width": 480,
+          "height": 270,
+          "bytes": 38960,
+          "sha256": "a3b657405112b63dc64269fb58f81be4a1f5cf01e3fb87eb96bd58e037f633cc"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-classic-640.avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 24077,
+          "sha256": "8624f795699f297cae122a132ca2bbbe55d818b973952aa3d297b4c124b60ce4"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-classic-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 32410,
+          "sha256": "939172511e416eb5b57d647a9e99616f37a189b854b324f13c2585abfb1c48aa"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-classic-640.jpg",
+          "width": 640,
+          "height": 360,
+          "bytes": 60845,
+          "sha256": "75bfd47af1f09b98fb8150b1c5bf2dc318772966c3fd008353d223c8695e9e14"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-classic-960.avif",
+          "width": 960,
+          "height": 540,
+          "bytes": 42183,
+          "sha256": "9cfc4d80c86a599c8112da1008a31914ee234620f0042b497910004ed79edb0b"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-classic-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 57516,
+          "sha256": "d5dedb6b4a4aba160adb2836ba0ddb237eddff10e994f2fe4d1002c11c0510ed"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-classic-960.jpg",
+          "width": 960,
+          "height": 540,
+          "bytes": 115276,
+          "sha256": "cf0c457664401b732ebf14ebb4c005e401497d3cbf19c68829f63a0aefe9b0bc"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-classic-1280.avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 62189,
+          "sha256": "f1d361801d1b644be2add3f1c13eaa938027a1fd19f3f035a3f2e7471283c3e0"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-classic-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 83204,
+          "sha256": "ea69626bafa08a00b9ad9f07466929edd270ab93886203d28a930a65ab892e13"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-classic-1280.jpg",
+          "width": 1280,
+          "height": 720,
+          "bytes": 179210,
+          "sha256": "b9d6d3e6ee17badeff755a131776b9c71d5d45e704a7ae49761e51fe51244e90"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-classic-1672.avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 86918,
+          "sha256": "395ad19637ba64781737720a29f49e2996538c1a4029b0dc9b17ac30a55530d5"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-classic-1672.webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 114874,
+          "sha256": "f094d331c2e821f730f5c8713c6fd46c03bf8f6b171a3c60908adb1458e2d02f"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-classic-1672.jpg",
+          "width": 1672,
+          "height": 941,
+          "bytes": 269950,
+          "sha256": "8d983d260331f160c1a2240b90009fc5c2dd2b2ad4b0d44326752b27a9317433"
+        }
+      ]
+    },
+    "christmas": {
+      "original": "_originals/seasonal-homepage/homepage-christmas.png",
+      "sha256": "732fd1975faad451ba1f696f2c9cd1d7d4ee25669afa78d854f6a5a0add4b700",
+      "bytes": 2110343,
+      "assets": [
+        {
+          "file": "assets/images/hero/homepage/homepage-christmas-480.avif",
+          "width": 480,
+          "height": 270,
+          "bytes": 28142,
+          "sha256": "2b68203d25277a2ea0af4ac5e475434c1509f405583b61fda80b399891820ea1"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-christmas-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 35206,
+          "sha256": "386cba1cc752c8c2a891a083d1b8bdd0425cf1acb65eba0694f7dff93e99256e"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-christmas-480.jpg",
+          "width": 480,
+          "height": 270,
+          "bytes": 58047,
+          "sha256": "ed6d4f6dc30a36677aa53bc01ad25c9efbdabf12b6ecc36b7e232115d12c6912"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-christmas-640.avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 41769,
+          "sha256": "34992963bd60e69318b95c581e0927ecd1ca3a53c2d715e76ac7719563f45ede"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-christmas-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 53702,
+          "sha256": "17a9c57b0f7d10dead4c80add1049e4f23da5f4c5b97db6855a652fc39ef215c"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-christmas-640.jpg",
+          "width": 640,
+          "height": 360,
+          "bytes": 91371,
+          "sha256": "06bdbd0bc9761a77fb3e19869c9dbdd428b9287a6a66a5f8d0d02830a2dd3c34"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-christmas-960.avif",
+          "width": 960,
+          "height": 540,
+          "bytes": 74003,
+          "sha256": "73d25bea882a18d9ae8896e564834caa3d36b337d4d6ebcb1f5bef7bb051a2f4"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-christmas-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 95804,
+          "sha256": "8bfd3e14bf1e6d283481f56ad743207a05d2ed5e1a4050159ee0b46f772d33e4"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-christmas-960.jpg",
+          "width": 960,
+          "height": 540,
+          "bytes": 172659,
+          "sha256": "faff1910530e45f7bd36b14ecd9f49486c1104f5fa48777f053907273bb38db9"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-christmas-1280.avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 107284,
+          "sha256": "9255f78b5ca89051aca3b3cac5389d0e8d1c9cb667451ad9d7c09298ed7a74e7"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-christmas-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 138454,
+          "sha256": "b7ac22cb033a33b465e805f4e2a256bc7bc26d26f93661b85657cb416e69fa31"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-christmas-1280.jpg",
+          "width": 1280,
+          "height": 720,
+          "bytes": 266035,
+          "sha256": "a5c9e2c608dcbbfb1deb449c64d8553b4a89e35ca656fe20cda18f149233198e"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-christmas-1672.avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 148418,
+          "sha256": "6a072e14b5c6861b428496b6f648bc29cf501078f4ff8caac312b26d9e7140ef"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-christmas-1672.webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 195944,
+          "sha256": "6b7cfd040b1df40c62983fe85d7802252ff83db85bbc90e58a902ddf03a84e50"
+        },
+        {
+          "file": "assets/images/hero/homepage/homepage-christmas-1672.jpg",
+          "width": 1672,
+          "height": 941,
+          "bytes": 394583,
+          "sha256": "033b38b0fa129b347b8f6e270c60fe320091b710a64854f65d5cadfe074410f5"
+        }
+      ]
+    }
+  }
+}

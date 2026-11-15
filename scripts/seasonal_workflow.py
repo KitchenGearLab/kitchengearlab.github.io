@@ -3,7 +3,7 @@
 Uses the job-scoped GITHUB_TOKEN only; no PAT, external scheduler or image encoder.
 """
 import json, os, subprocess, time, urllib.error, urllib.request
-from seasonal_hero import ROOT, PAGES, update
+from seasonal_hero import ROOT, ALL_PAGES, update
 
 def git(*args):
     return subprocess.check_output(['git',*args],cwd=ROOT,text=True).strip()
@@ -51,11 +51,11 @@ def main():
     result=update(root=ROOT)
     changed=result['changed']
     if changed:
-        # Stage only the two allowed HTML files. No broad add, forced push or keepalive commit.
-        if not set(changed)<=set(PAGES.values()):raise RuntimeError('Unexpected write scope')
+        # Stage only the four allowed HTML files. No broad add, forced push or keepalive commit.
+        if not set(changed)<=set(ALL_PAGES):raise RuntimeError('Unexpected write scope')
         git('add','--',*changed)
         git('-c','user.name=github-actions[bot]','-c','user.email=41898282+github-actions[bot]@users.noreply.github.com',
-            'commit','-m',f'chore: select {result["season"]} Ninja collection hero')
+            'commit','-m',f'chore: select {result["season"]} seasonal heroes')
         git('push','origin','HEAD:main')
     head=git('rev-parse','HEAD')
     result.update({'commit':head,'pages':ensure_pages(repo,head)})
@@ -63,7 +63,7 @@ def main():
     summary=os.environ.get('GITHUB_STEP_SUMMARY')
     if summary:
         with open(summary,'a',encoding='utf8') as stream:
-            stream.write(f'### Ninja seasonal hero\n\nSeason: **{result["season"]}** ({result["timezone"]}).\n\n'
+            stream.write(f'### Homepage and Ninja seasonal heroes\n\nSeason: **{result["season"]}** ({result["timezone"]}).\n\n'
                 f'HTML files changed: **{len(changed)}**. Pages build requested: **{result["pages"]["requested"]}**.\n\n'
                 f'Verified Pages commit: `{head}`.\n')
 if __name__=='__main__':main()
