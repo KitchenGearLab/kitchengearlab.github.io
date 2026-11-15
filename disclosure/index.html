@@ -42,10 +42,7 @@
   <meta name="twitter:image:alt" content="Minimalist editorial trust image with calm, clean shapes and soft daylight." />
 
   <!-- Performance: brand preload -->
-  <link rel="preload" as="image"
-        href="https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-512.png" />
-
-  <!-- GA4: connection hints -->
+<!-- GA4: connection hints -->
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="dns-prefetch" href="//www.googletagmanager.com" />
 
@@ -70,9 +67,9 @@
         "url": "https://kitchengearlab.github.io/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-512.png",
-          "width": 512,
-          "height": 512
+          "url": "https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-128.webp",
+          "width": 128,
+          "height": 128
         }
       },
       {
@@ -109,7 +106,7 @@
         },
         "mainEntityOfPage": "https://kitchengearlab.github.io/disclosure/",
         "datePublished": "2026-02-01",
-        "dateModified": "2026-02-02"
+        "dateModified": "2026-11-13"
       }
     ]
   }
@@ -119,34 +116,21 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" role="banner">
-    <div class="container">
-      <div class="header-inner">
-        <a class="brand" href="/" aria-label="KitchenGearLab home">
-          <img
-            src="https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-512.png"
-            width="32"
-            height="32"
-            alt=""
-            loading="eager"
-            decoding="async"
-          />
-          <span class="brand-text">
-            <span class="brand-name">KitchenGearLab</span>
-            <span class="brand-tagline">Neutral reviews. Practical decisions.</span>
-          </span>
-        </a>
-
-        <nav class="site-nav" aria-label="Primary">
-          <ul class="nav-list">
-            <li><a href="/guides/">Guides</a></li>
-            <li><a href="/best-air-fryers/">Best Air Fryers</a></li>
-            <li><a href="/best-air-fryers/ninja-air-fryers/">Ninja Hub</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+  <!-- shared:header:start -->
+  <header class="site-header">
+    <div class="container"><div class="header-inner">
+      <a class="brand" href="/" aria-label="KitchenGearLab home">
+        <img src="/assets/images/brand/kitchengearlab-logo-64.webp" srcset="/assets/images/brand/kitchengearlab-logo-64.webp 1x, /assets/images/brand/kitchengearlab-logo-128.webp 2x" width="32" height="32" alt="" decoding="async" />
+        <span class="brand-text"><span class="brand-name">KitchenGearLab</span><span class="brand-tagline">Neutral reviews. Practical decisions.</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary"><ul class="nav-list">
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/best-air-fryers/">Best Air Fryers</a></li>
+        <li><a href="/ninja/">Ninja</a></li>
+      </ul></nav>
+    </div></div>
   </header>
+<!-- shared:header:end -->
 
   <!-- Breadcrumbs (visible) -->
   <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -165,6 +149,7 @@
       <div class="container">
         <div class="section-head">
           <h1 id="page-title">Disclosure</h1>
+          <p><strong>As an Amazon Associate I earn from qualifying purchases.</strong></p>
           <p class="section-subtitle">Affiliate disclosure and editorial policy.</p>
         </div>
 
@@ -172,7 +157,7 @@
           <div class="note attention">
             <p class="small">
               <strong>Affiliate disclosure:</strong> KitchenGearLab may earn a commission when you buy through certain links.
-              This does not increase your price. It helps support testing and publishing.
+              This does not increase your price. It helps support research and publishing.
             </p>
           </div>
 
@@ -204,7 +189,7 @@
 
           <h2>Pricing and availability</h2>
           <p class="muted prose">
-            Prices and availability can change quickly. When we mention price ranges or “good value,” it reflects the context at the time of writing.
+            Prices and availability can change quickly. We do not display live prices, stock levels or customer ratings. A value recommendation must explain its documented basis; check current seller pricing before buying.
             Always verify the current listing before purchasing.
           </p>
 
@@ -220,43 +205,35 @@
             </p>
           </div>
 
-          <p class="small prose">Last updated: 2026-02-02</p>
+          <p class="small prose">Last updated: <time datetime="2026-11-13">2026-11-13</time></p>
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer" role="contentinfo">
+  <!-- shared:footer:start -->
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div>
-          <p class="footer-name">KitchenGearLab</p>
-          <p class="footer-note">Neutral, test-driven kitchen gear reviews and buying guides.</p>
-        </div>
-
-        <nav aria-label="Footer">
-          <ul class="footer-links">
-            <li><a href="/guides/">Guides</a></li>
-            <li><a href="/best-air-fryers/">Best Air Fryers</a></li>
-            <li><a href="/best-air-fryers/ninja-air-fryers/">Ninja Hub</a></li>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/disclosure/" aria-current="page">Disclosure</a></li>
-            <li><a href="/privacy/">Privacy</a></li>
-          </ul>
-        </nav>
+        <div><p class="footer-name">KitchenGearLab</p><p class="footer-note">Independent kitchen gear research and practical buying guides.</p></div>
+        <nav aria-label="Footer"><ul class="footer-links">
+          <li><a href="/guides/">Guides</a></li>
+          <li><a href="/best-air-fryers/">Best Air Fryers</a></li>
+          <li><a href="/ninja/">Ninja kitchen appliances</a></li>
+          <li><a href="/best-air-fryers/ninja-air-fryers/">Ninja air fryers</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/disclosure/">Disclosure</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+        </ul></nav>
       </div>
-
       <div class="footer-legal">
-        <p class="small">
-          Affiliate disclosure: Some links may earn a commission. See <a href="/disclosure/">Disclosure</a>.
-        </p>
-        <p class="small">
-          Privacy: <a href="/privacy/">Privacy policy</a>.
-        </p>
-        <p class="small"><span aria-hidden="true">©</span> KitchenGearLab</p>
+        <p class="small">As an Amazon Associate I earn from qualifying purchases.</p>
+        <p class="small">Some links are affiliate links. See our <a href="/disclosure/">affiliate and editorial policy</a> and <a href="/privacy/">privacy policy</a>.</p>
+        <p class="small">© KitchenGearLab</p>
       </div>
     </div>
   </footer>
+<!-- shared:footer:end -->
 </body>
 </html>

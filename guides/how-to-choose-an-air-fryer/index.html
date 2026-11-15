@@ -47,10 +47,7 @@
         imagesrcset="https://kitchengearlab.github.io/assets/images/hero/how-to-choose-an-air-fryer-hero-1600x840.webp 1600w, https://kitchengearlab.github.io/assets/images/hero/how-to-choose-an-air-fryer-hero-2400x1260.webp 2400w"
         imagesizes="(max-width: 900px) 100vw, 40vw" />
 
-  <link rel="preload" as="image"
-        href="https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-512.png" />
-
-  <!-- GA4: connection hints -->
+<!-- GA4: connection hints -->
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="dns-prefetch" href="//www.googletagmanager.com" />
 
@@ -75,9 +72,9 @@
         "url": "https://kitchengearlab.github.io/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-512.png",
-          "width": 512,
-          "height": 512
+          "url": "https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-128.webp",
+          "width": 128,
+          "height": 128
         }
       },
       {
@@ -107,7 +104,7 @@
         "publisher": { "@id": "https://kitchengearlab.github.io/#organization" },
         "inLanguage": "en-US",
         "datePublished": "2026-02-01",
-        "dateModified": "2026-02-01"
+        "dateModified": "2026-11-13"
       }
     ]
   }
@@ -117,34 +114,21 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" role="banner">
-    <div class="container">
-      <div class="header-inner">
-        <a class="brand" href="/" aria-label="KitchenGearLab home">
-          <img
-            src="https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-512.png"
-            width="32"
-            height="32"
-            alt=""
-            loading="eager"
-            decoding="async"
-          />
-          <span class="brand-text">
-            <span class="brand-name">KitchenGearLab</span>
-            <span class="brand-tagline">Neutral reviews. Practical decisions.</span>
-          </span>
-        </a>
-
-        <nav class="site-nav" aria-label="Primary">
-          <ul class="nav-list">
-            <li><a href="/guides/">Guides</a></li>
-            <li><a href="/best-air-fryers/">Best Air Fryers</a></li>
-            <li><a href="/best-air-fryers/ninja-air-fryers/">Ninja Hub</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+  <!-- shared:header:start -->
+  <header class="site-header">
+    <div class="container"><div class="header-inner">
+      <a class="brand" href="/" aria-label="KitchenGearLab home">
+        <img src="/assets/images/brand/kitchengearlab-logo-64.webp" srcset="/assets/images/brand/kitchengearlab-logo-64.webp 1x, /assets/images/brand/kitchengearlab-logo-128.webp 2x" width="32" height="32" alt="" decoding="async" />
+        <span class="brand-text"><span class="brand-name">KitchenGearLab</span><span class="brand-tagline">Neutral reviews. Practical decisions.</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary"><ul class="nav-list">
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/best-air-fryers/">Best Air Fryers</a></li>
+        <li><a href="/ninja/">Ninja</a></li>
+      </ul></nav>
+    </div></div>
   </header>
+<!-- shared:header:end -->
 
   <main id="main" role="main" tabindex="-1">
 
@@ -177,7 +161,7 @@
               <a href="/guides/are-air-fryers-worth-it/">Are they worth it?</a>
             </p>
 
-            <p class="small">Last updated: 2026-02-01</p>
+            <p class="small">Last updated: <time datetime="2026-11-13">2026-11-13</time></p>
           </div>
 
           <div class="hero-media" aria-label="Hero image">
@@ -212,7 +196,7 @@
         </div>
 
         <div class="cards" role="list">
-          <article class="card article-card" role="listitem">
+          <div class="card article-card" role="listitem">
             <h3 class="card-title">1) Capacity (the biggest regret factor)</h3>
             <p class="card-text">
               Capacity claims can be misleading. What matters is how much food can sit in a single layer with airflow.
@@ -224,9 +208,9 @@
               <li><strong>5+ people:</strong> consider large dual-basket or accept batches.</li>
             </ul>
             <p class="card-text">For household-sized meals, see our <a href="/best-air-fryers/best-air-fryer-for-families/">best air fryers for families</a>.</p>
-          </article>
+          </div>
 
-          <article class="card article-card" role="listitem">
+          <div class="card article-card" role="listitem">
             <h3 class="card-title">2) Basket layout and airflow</h3>
             <p class="card-text">
               Crisp results require airflow to reach the surface. Overcrowding and awkward basket shapes reduce consistency.
@@ -235,9 +219,9 @@
               <li>Look for a basket that supports a <strong>single layer</strong> for your typical foods.</li>
               <li>A good crisper plate reduces soggy bottoms and improves browning.</li>
             </ul>
-          </article>
+          </div>
 
-          <article class="card article-card" role="listitem">
+          <div class="card article-card" role="listitem">
             <h3 class="card-title">3) Cleanup and residue traps</h3>
             <p class="card-text">
               If cleanup is annoying, you’ll stop using it. Simple parts, fewer crevices, and easy access win long-term.
@@ -246,9 +230,9 @@
               <li>Dishwasher-safe parts help, but design matters more than labels.</li>
               <li>Coatings should feel durable and clean without scraping.</li>
             </ul>
-          </article>
+          </div>
 
-          <article class="card article-card" role="listitem">
+          <div class="card article-card" role="listitem">
             <h3 class="card-title">4) Controls you’ll actually use</h3>
             <p class="card-text">
               Presets don’t cook for you. Choose controls that feel effortless: clear time/temp adjustment and readable display.
@@ -257,9 +241,9 @@
               <li><strong>Simple:</strong> dials can be faster than menu presets.</li>
               <li><strong>Digital:</strong> great when it’s responsive and readable.</li>
             </ul>
-          </article>
+          </div>
 
-          <article class="card article-card" role="listitem">
+          <div class="card article-card" role="listitem">
             <h3 class="card-title">5) Noise, smoke, and kitchen comfort</h3>
             <p class="card-text">
               Fans vary. Greasier foods can smoke depending on design and temperature. Comfort matters if you cook often.
@@ -268,9 +252,9 @@
               <li>If noise bothers you, avoid models known for aggressive fan sound.</li>
               <li>For fatty foods, airflow and drip design affect smoke levels.</li>
             </ul>
-          </article>
+          </div>
 
-          <article class="card article-card" role="listitem">
+          <div class="card article-card" role="listitem">
             <h3 class="card-title">6) Footprint and cabinet clearance</h3>
             <p class="card-text">
               Measure before you buy. Some models are tall and can feel awkward under cabinets.
@@ -279,7 +263,7 @@
               <li>Check width, depth, and lid/pull clearance.</li>
               <li>If it can’t live on the counter, usage usually drops.</li>
             </ul>
-          </article>
+          </div>
         </div>
       </div>
     </section>
@@ -328,43 +312,36 @@
             </p>
           </div>
 
-          <p class="small prose">Last updated: 2026-02-01</p>
+          <p class="small prose">Last updated: <time datetime="2026-11-13">2026-11-13</time></p>
         </div>
       </div>
     </section>
 
+  <section class="section" aria-labelledby="glass-format-title"><div class="container"><div class="section-head"><h2 id="glass-format-title">Consider the container format too</h2></div><p>A glass-container system changes serving, storage and care decisions. Our <a href="/ninja/ninja-crispi-fn101cgy-review/">Ninja Crispi FN101CGY review</a> compares that workflow with a drawer or dual-basket layout, without assuming a cooking-performance advantage.</p></div></section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
+  <!-- shared:footer:start -->
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div>
-          <p class="footer-name">KitchenGearLab</p>
-          <p class="footer-note">Neutral, test-driven kitchen gear reviews and buying guides.</p>
-        </div>
-
-        <nav aria-label="Footer">
-          <ul class="footer-links">
-            <li><a href="/guides/">Guides</a></li>
-            <li><a href="/best-air-fryers/">Best Air Fryers</a></li>
-            <li><a href="/best-air-fryers/ninja-air-fryers/">Ninja Hub</a></li>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/disclosure/">Disclosure</a></li>
-            <li><a href="/privacy/">Privacy</a></li>
-          </ul>
-        </nav>
+        <div><p class="footer-name">KitchenGearLab</p><p class="footer-note">Independent kitchen gear research and practical buying guides.</p></div>
+        <nav aria-label="Footer"><ul class="footer-links">
+          <li><a href="/guides/">Guides</a></li>
+          <li><a href="/best-air-fryers/">Best Air Fryers</a></li>
+          <li><a href="/ninja/">Ninja kitchen appliances</a></li>
+          <li><a href="/best-air-fryers/ninja-air-fryers/">Ninja air fryers</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/disclosure/">Disclosure</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+        </ul></nav>
       </div>
-
       <div class="footer-legal">
-        <p class="small">
-          Affiliate disclosure: Some links may earn a commission. See <a href="/disclosure/">Disclosure</a>.
-        </p>
-        <p class="small">
-          Privacy: <a href="/privacy/">Privacy policy</a>.
-        </p>
-        <p class="small"><span aria-hidden="true">©</span> KitchenGearLab</p>
+        <p class="small">As an Amazon Associate I earn from qualifying purchases.</p>
+        <p class="small">Some links are affiliate links. See our <a href="/disclosure/">affiliate and editorial policy</a> and <a href="/privacy/">privacy policy</a>.</p>
+        <p class="small">© KitchenGearLab</p>
       </div>
     </div>
   </footer>
+<!-- shared:footer:end -->
 </body>
 </html>

@@ -1,0 +1,16 @@
+# GitHub Pages publishes main:/ through its managed Jekyll build.
+# Keep build inputs and local evidence out of the public destination.
+exclude:
+  - _originals
+  - scripts
+  - _content
+  - _data
+  - _reports
+  - _templates
+  - _site
+  - _qa
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - assets/images/hero/ninja-crispi-fn101cgy-original.png

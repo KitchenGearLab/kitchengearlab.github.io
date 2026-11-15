@@ -1,0 +1,14 @@
+/_site/
+/.jekyll-cache/
+/.jekyll-metadata
+/**/__pycache__/
+*.pyc
+
+# Local editorial inputs, original images and QA evidence: preserve locally.
+/_originals/
+/_reports/
+/_content/
+/_data/
+/_templates/
+/scripts/
+/assets/images/hero/ninja-crispi-fn101cgy-original.png

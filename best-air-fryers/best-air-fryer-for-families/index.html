@@ -49,10 +49,7 @@
         imagesizes="(max-width: 900px) 100vw, 50vw" />
 
   <!-- Brand preload -->
-  <link rel="preload" as="image"
-        href="https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-512.png" />
-
-  <!-- GA4: connection hints -->
+<!-- GA4: connection hints -->
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="dns-prefetch" href="//www.googletagmanager.com" />
 
@@ -77,9 +74,9 @@
         "url": "https://kitchengearlab.github.io/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-512.png",
-          "width": 512,
-          "height": 512
+          "url": "https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-128.webp",
+          "width": 128,
+          "height": 128
         }
       },
       {
@@ -117,7 +114,7 @@
         },
         "mainEntityOfPage": "https://kitchengearlab.github.io/best-air-fryers/best-air-fryer-for-families/",
         "datePublished": "2026-02-02",
-        "dateModified": "2026-02-02"
+        "dateModified": "2026-11-14"
       },
       {
         "@type": "Article",
@@ -135,7 +132,7 @@
           "height": 630
         },
         "datePublished": "2026-02-02",
-        "dateModified": "2026-02-02"
+        "dateModified": "2026-11-14"
       },
       {
         "@type": "FAQPage",
@@ -183,34 +180,21 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" role="banner">
-    <div class="container">
-      <div class="header-inner">
-        <a class="brand" href="/" aria-label="KitchenGearLab home">
-          <img
-            src="https://kitchengearlab.github.io/assets/images/brand/kitchengearlab-logo-512.png"
-            width="32"
-            height="32"
-            alt=""
-            loading="eager"
-            decoding="async"
-          />
-          <span class="brand-text">
-            <span class="brand-name">KitchenGearLab</span>
-            <span class="brand-tagline">Neutral reviews. Practical decisions.</span>
-          </span>
-        </a>
-
-        <nav class="site-nav" aria-label="Primary">
-          <ul class="nav-list">
-            <li><a href="/guides/">Guides</a></li>
-            <li><a href="/best-air-fryers/">Best Air Fryers</a></li>
-            <li><a href="/best-air-fryers/ninja-air-fryers/">Ninja Hub</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+  <!-- shared:header:start -->
+  <header class="site-header">
+    <div class="container"><div class="header-inner">
+      <a class="brand" href="/" aria-label="KitchenGearLab home">
+        <img src="/assets/images/brand/kitchengearlab-logo-64.webp" srcset="/assets/images/brand/kitchengearlab-logo-64.webp 1x, /assets/images/brand/kitchengearlab-logo-128.webp 2x" width="32" height="32" alt="" decoding="async" />
+        <span class="brand-text"><span class="brand-name">KitchenGearLab</span><span class="brand-tagline">Neutral reviews. Practical decisions.</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary"><ul class="nav-list">
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/best-air-fryers/">Best Air Fryers</a></li>
+        <li><a href="/ninja/">Ninja</a></li>
+      </ul></nav>
+    </div></div>
   </header>
+<!-- shared:header:end -->
 
   <nav class="breadcrumbs" aria-label="Breadcrumb">
     <div class="container">
@@ -260,8 +244,7 @@
             </p>
 
             <p class="small">
-              Last updated:
-              <time datetime="2026-02-02">2026-02-02</time>
+              Last updated: <time datetime="2026-11-14">2026-11-14</time>
             </p>
           </div>
 
@@ -329,7 +312,7 @@
         <div class="section-head"><h2 id="top-picks-title">Three Ninja options for different family needs</h2><p class="section-subtitle">Choose the layout that fits your meals and kitchen.</p></div>
         <div class="note"><p class="small">Affiliate disclosure: We may earn a commission if you buy through the Amazon.ca links below. See <a href="/disclosure/">Disclosure</a>. Verify the exact model, specifications, availability, and current price before buying.</p></div>
         <div class="cards" role="list">
-          <article class="card product-card" role="listitem" id="two-baskets">
+          <div class="card product-card" role="listitem" id="two-baskets">
             <p class="tag">Best for large dual-basket family meals</p>
             <h3 class="card-title">Ninja Foodi DualZone XL DZ302C</h3>
             <p class="card-text">Consider this XL dual-basket option for separate foods in two zones. This recommendation follows its side-by-side configuration, not a verified portion count or cooking advantage.</p>
@@ -340,10 +323,10 @@
               <li><strong>Structural strength:</strong> Separate baskets for two foods.</li>
               <li><strong>Trade-off:</strong> Needs room for both baskets side by side.</li>
             </ul>
-            <a class="btn btn-accent" href="https://link.amazon/B01k483gD" target="_blank" rel="sponsored nofollow noopener">Check Ninja DZ302C price on Amazon.ca</a>
-          </article>
+            <a class="btn btn-accent" href="https://www.amazon.ca/dp/B0FLQLG4TM?tag=kitchengearla-20" target="_blank" rel="sponsored noopener noreferrer" aria-label="Check Price on Amazon.ca for Ninja DZ302C (opens in a new tab)">Check Price on Amazon.ca</a>
+          </div>
 
-          <article class="card product-card" role="listitem" id="big-single">
+          <div class="card product-card" role="listitem" id="big-single">
             <p class="tag">Best simpler single-basket option</p>
             <h3 class="card-title">Ninja Air Fryer XL MaxCrisp AF181C</h3>
             <p class="card-text">Consider this option when you prefer one basket to manage. A simpler layout does not establish faster cleanup or superior cooking performance.</p>
@@ -354,10 +337,10 @@
               <li><strong>Structural strength:</strong> One basket to load and manage.</li>
               <li><strong>Trade-off:</strong> No second basket for a separate food.</li>
             </ul>
-            <a class="btn btn-accent" href="https://link.amazon/B00jOJOHC" target="_blank" rel="sponsored nofollow noopener">Check Ninja AF181C price on Amazon.ca</a>
-          </article>
+            <a class="btn btn-accent" href="https://www.amazon.ca/dp/B0D4B57TWX?tag=kitchengearla-20" target="_blank" rel="sponsored noopener noreferrer" aria-label="Check Price on Amazon.ca for Ninja AF181C (opens in a new tab)">Check Price on Amazon.ca</a>
+          </div>
 
-          <article class="card product-card" role="listitem" id="counter-space">
+          <div class="card product-card" role="listitem" id="counter-space">
             <p class="tag">Best for families with limited counter space</p>
             <h3 class="card-title">Ninja DoubleStack Smart XL 10 QT / 9.5 L</h3>
             <p class="card-text">Consider this option when you want two baskets but counter width is your main constraint. The vertical layout changes the space profile; check actual dimensions and clearance before buying.</p>
@@ -368,8 +351,8 @@
               <li><strong>Structural strength:</strong> Two baskets stacked rather than arranged side by side.</li>
               <li><strong>Trade-off:</strong> Still requires height and clearance.</li>
             </ul>
-            <a class="btn btn-accent" href="https://link.amazon/B0e7sXImL" target="_blank" rel="sponsored nofollow noopener">Check Ninja DoubleStack Smart XL price on Amazon.ca</a>
-          </article>
+            <a class="btn btn-accent" href="https://www.amazon.ca/dp/B0F8RGZLQ3?tag=kitchengearla-20" target="_blank" rel="sponsored noopener noreferrer" aria-label="Check Price on Amazon.ca for Ninja SL451C (opens in a new tab)">Check Price on Amazon.ca</a>
+          </div>
         </div>
         <p class="small">Related reading: <a href="/disclosure/">Disclosure</a> · <a href="/best-air-fryers/ninja-air-fryers/">Ninja Air Fryers</a> · <a href="/best-air-fryers/">Best Air Fryers</a> · <a href="/best-air-fryers/ninja-vs-philips/">Ninja vs Philips</a> · <a href="/best-air-fryers/">Best Air Fryers</a>.</p>
       </div>
@@ -379,7 +362,7 @@
     <section class="section highlight" aria-labelledby="table-title">
       <div class="container">
         <div class="section-head"><h2 id="table-title">Quick comparison</h2><p class="section-subtitle">Configuration and space needs, without unverified cooking scores.</p></div>
-        <div class="table-wrap">
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable comparison table">
           <table class="table">
             <caption>Family air fryer layouts. Nominal capacity does not establish servings.</caption>
             <thead><tr><th scope="col">Model</th><th scope="col">Basket layout</th><th scope="col">Approximate capacity</th><th scope="col">Counter-space profile</th><th scope="col">Best fit</th><th scope="col">Key trade-off</th></tr></thead>
@@ -472,44 +455,35 @@
         </div>
 
         <p class="small">
-          Last updated:
-          <time datetime="2026-02-02">2026-02-02</time>
+          Last updated: <time datetime="2026-11-14">2026-11-14</time>
         </p>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer" role="contentinfo">
+  <!-- shared:footer:start -->
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div>
-          <p class="footer-name">KitchenGearLab</p>
-          <p class="footer-note">Neutral, test-driven kitchen gear reviews and buying guides.</p>
-        </div>
-
-        <nav aria-label="Footer">
-          <ul class="footer-links">
-            <li><a href="/guides/">Guides</a></li>
-            <li><a href="/best-air-fryers/">Best Air Fryers</a></li>
-            <li><a href="/best-air-fryers/ninja-air-fryers/">Ninja Hub</a></li>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/disclosure/">Disclosure</a></li>
-            <li><a href="/privacy/">Privacy</a></li>
-          </ul>
-        </nav>
+        <div><p class="footer-name">KitchenGearLab</p><p class="footer-note">Independent kitchen gear research and practical buying guides.</p></div>
+        <nav aria-label="Footer"><ul class="footer-links">
+          <li><a href="/guides/">Guides</a></li>
+          <li><a href="/best-air-fryers/">Best Air Fryers</a></li>
+          <li><a href="/ninja/">Ninja kitchen appliances</a></li>
+          <li><a href="/best-air-fryers/ninja-air-fryers/">Ninja air fryers</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/disclosure/">Disclosure</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+        </ul></nav>
       </div>
-
       <div class="footer-legal">
-        <p class="small">
-          Affiliate disclosure: Some links may earn a commission. See <a href="/disclosure/">Disclosure</a>.
-        </p>
-        <p class="small">
-          Privacy: <a href="/privacy/">Privacy policy</a>.
-        </p>
-        <p class="small"><span aria-hidden="true">©</span> KitchenGearLab</p>
+        <p class="small">As an Amazon Associate I earn from qualifying purchases.</p>
+        <p class="small">Some links are affiliate links. See our <a href="/disclosure/">affiliate and editorial policy</a> and <a href="/privacy/">privacy policy</a>.</p>
+        <p class="small">© KitchenGearLab</p>
       </div>
     </div>
   </footer>
+<!-- shared:footer:end -->
 </body>
 </html>
