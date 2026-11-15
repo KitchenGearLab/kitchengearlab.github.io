@@ -188,6 +188,7 @@
     ]
   }
   </script>
+<!-- seasonal:logo:head:start --><script>(function(){try{var d={};new Intl.DateTimeFormat('en-CA',{timeZone:'America/Toronto',calendar:'gregory',numberingSystem:'latn',month:'numeric',day:'numeric'}).formatToParts(new Date()).forEach(function(v){d[v.type]=+v.value});if(d.month===11||(d.month===12&&d.day<=26)){var o=new MutationObserver(function(){var p=document.querySelector('[data-seasonal-logo]');if(p&&p.querySelector('img')){o.disconnect();p.querySelectorAll('source').forEach(function(s){s.media='all'})}});o.observe(document.documentElement,{childList:true,subtree:true})}}catch(e){}})();</script><!-- seasonal:logo:head:end -->
 </head>
 
 <body>
@@ -197,7 +198,7 @@
   <header class="site-header">
     <div class="container"><div class="header-inner">
       <a class="brand" href="/">
-        <img src="/assets/images/brand/kitchengearlab-logo-64.webp" srcset="/assets/images/brand/kitchengearlab-logo-64.webp 1x, /assets/images/brand/kitchengearlab-logo-128.webp 2x" width="32" height="32" alt="" decoding="async" />
+        <!-- seasonal:logo:start --><picture data-seasonal-logo="" style="display:block;flex:0 0 32px;width:32px;height:32px"><source type="image/webp" media="not all" srcset="/assets/images/brand/kitchengearlab-logo-christmas-64.webp 1x, /assets/images/brand/kitchengearlab-logo-christmas-128.webp 2x, /assets/images/brand/kitchengearlab-logo-christmas-192.webp 3x" /><source type="image/png" media="not all" srcset="/assets/images/brand/kitchengearlab-logo-christmas-64.png 1x, /assets/images/brand/kitchengearlab-logo-christmas-128.png 2x, /assets/images/brand/kitchengearlab-logo-christmas-192.png 3x" /><img src="/assets/images/brand/kitchengearlab-logo-64.webp" srcset="/assets/images/brand/kitchengearlab-logo-64.webp 1x, /assets/images/brand/kitchengearlab-logo-128.webp 2x" width="32" height="32" alt="" style="object-fit:contain;aspect-ratio:1" onerror="this.onerror=null;this.parentNode.querySelectorAll('source').forEach(function(s){s.remove()})" decoding="async" /></picture><!-- seasonal:logo:end -->
         <span class="brand-text"><span class="brand-name">KitchenGearLab</span><span class="brand-tagline">Neutral reviews. Practical decisions.</span></span>
       </a>
       <nav class="site-nav" aria-label="Primary"><ul class="nav-list">

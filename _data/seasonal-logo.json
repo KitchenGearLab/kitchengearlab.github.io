@@ -1,0 +1,52 @@
+{
+  "original": "_originals/seasonal-logo/kitchengearlab-logo-christmas.png",
+  "sourceWidth": 1254,
+  "sourceHeight": 1254,
+  "sourceBytes": 803080,
+  "sourceSha256": "b398806b48d3ba077d1646f7e1564930bb28d2b879ece98deb3d7b58e6f11b87",
+  "encoding": "Full-frame Lanczos resize; lossless PNG and lossless exact WebP; alpha retained",
+  "assets": [
+    {
+      "file": "assets/images/brand/kitchengearlab-logo-christmas-64.png",
+      "width": 64,
+      "height": 64,
+      "bytes": 5301,
+      "sha256": "8a0ad845aa8ca49cb9a8f30882bac2e05e4496749e72bc02b5d4031a570c905a"
+    },
+    {
+      "file": "assets/images/brand/kitchengearlab-logo-christmas-64.webp",
+      "width": 64,
+      "height": 64,
+      "bytes": 3668,
+      "sha256": "84bcc01f4bd028be4df83bfd0812c98ec2322869bc198028cdf2156f7472a1a0"
+    },
+    {
+      "file": "assets/images/brand/kitchengearlab-logo-christmas-128.png",
+      "width": 128,
+      "height": 128,
+      "bytes": 14531,
+      "sha256": "b2f8cedf3d4d29ee418bfdd4cff4a90de9ea68dfae6feb9c5e74f5a83a336ced"
+    },
+    {
+      "file": "assets/images/brand/kitchengearlab-logo-christmas-128.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 10354,
+      "sha256": "0d046dced9983e515845261971363d0e41593ba132ac78a18946a8f444855585"
+    },
+    {
+      "file": "assets/images/brand/kitchengearlab-logo-christmas-192.png",
+      "width": 192,
+      "height": 192,
+      "bytes": 26601,
+      "sha256": "61d4fe493171bebac83a78642f2e671d61e198ea29582a054ae9debff482e115"
+    },
+    {
+      "file": "assets/images/brand/kitchengearlab-logo-christmas-192.webp",
+      "width": 192,
+      "height": 192,
+      "bytes": 19330,
+      "sha256": "0e2c99a3ba97eac2d52c6168ef5b83b2f3e4f4b15d2b2b399f17c12099a493ee"
+    }
+  ]
+}
