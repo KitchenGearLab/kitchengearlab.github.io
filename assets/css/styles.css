@@ -1280,6 +1280,20 @@ label{
 @media(prefers-reduced-motion:reduce){.review-hero-grid .hero-media{position:static}}
 
 /* Shared Ninja disclosure navigation. */
+/* Static language links stay visible beside the brand at every viewport size. */
+.header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 16px}
+.header-inner>.brand{grid-column:1;grid-row:1}
+.header-inner>.site-nav{grid-column:1/-1;grid-row:2}
+.language-switch{grid-column:2;grid-row:1;display:flex;align-items:center;gap:2px;white-space:nowrap;font-size:.875rem}
+.language-switch a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;border:1px solid transparent;border-radius:8px;text-decoration:none;color:var(--text)}
+.language-switch a:hover,.language-switch a[aria-current="page"]{background:var(--surface);border-color:var(--border)}
+.language-switch a[aria-current="page"]{font-weight:700;text-decoration:underline;text-underline-offset:4px}
+@media(min-width:1024px){
+ .header-inner{grid-template-columns:minmax(0,1fr) auto auto}
+ .header-inner>.site-nav{grid-column:2;grid-row:1}
+ .language-switch{grid-column:3}
+}
+@media(max-width:1023px){.header-inner .nav-list{justify-content:flex-start}}
 .site-header > .container{position:relative}
 .nav-ninja{display:flex;align-items:center}
 .ninja-mega-toggle{display:flex;align-items:center;justify-content:center;width:44px;min-height:44px;cursor:pointer;border:1px solid transparent;border-radius:12px;list-style:none}
