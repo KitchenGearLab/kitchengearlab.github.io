@@ -1271,7 +1271,8 @@ label{
 .home-task{display:flex;flex-direction:column;gap:8px;padding:20px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);text-decoration:none}
 .home-task:hover{border-color:var(--link);text-decoration:none}
 .home-task>span:last-child{font-size:.85rem;color:var(--muted)}
-.home-task-number{font-size:.78rem;font-weight:600;color:var(--link)}
+.home-task-number{display:flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;color:var(--link)}
+.home-task-icon{width:20px;height:20px;flex:0 0 20px}
 .home-discovery-link{margin-top:24px;font-size:.9rem}
 @media(min-width:768px){.model-index ul{grid-template-columns:repeat(2,minmax(0,1fr))}.home-category-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.home-page #start .cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(min-width:1024px){.review-hero-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}.review-hero-grid .hero-media{position:sticky;top:104px}.home-category-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
