@@ -3,6 +3,7 @@ import json,re,subprocess,unittest
 from html.parser import HTMLParser
 from header import ROOT,FRONT,HEAD_INCLUDE,HEADER_INCLUDE,HEADER,without_header,pages,update
 from seasonal_hero import hero,homepage_hero,without_hero,without_homepage_hero,replace_hero,replace_homepage_hero
+from homepage_og import upgrade_homepage_metadata
 
 class Links(HTMLParser):
     def __init__(self,source):super().__init__();self.links=[];self.feed(source)
@@ -32,7 +33,7 @@ class HeaderTests(unittest.TestCase):
                     switch=re.search(r'<!-- bilingual:switch:start -->(.*?)<!-- bilingual:switch:end -->',header,re.S)[1]
                     self.assertEqual(Links(switch).links,[row['en'],row['fr']])
                     normalize=lambda text:without_header(text)
-                    if row['en']=='/':normalize=lambda text:without_header(without_homepage_hero(text))
+                    if row['en']=='/':normalize=lambda text:without_header(without_homepage_hero(upgrade_homepage_metadata(text)))
                     elif row['en']=='/ninja/':normalize=lambda text:without_header(without_hero(text))
                     self.assertEqual(normalize(s),normalize(old))
     def test_existing_hero_workflow_and_assets_are_unchanged(self):
@@ -43,6 +44,7 @@ class HeaderTests(unittest.TestCase):
                 after=replace(source,season,'fr' if path.startswith('fr/') else 'en')
                 self.assertEqual(mask(after),mask(source))
                 self.assertIn(HEAD_INCLUDE,after);self.assertIn(HEADER_INCLUDE,after)
-        self.assertEqual(subprocess.check_output(['git','diff',base,'--','.github/workflows/','scripts/seasonal_hero.py','scripts/seasonal_workflow.py','assets/images/','favicon.ico','site.webmanifest'],cwd=ROOT),b'')
+        # Only the two approved evergreen OG derivatives are outside this header contract.
+        self.assertEqual(subprocess.check_output(['git','diff',base,'--','.github/workflows/','scripts/seasonal_hero.py','scripts/seasonal_workflow.py','assets/images/','favicon.ico','site.webmanifest',':(exclude)assets/images/og/home-og-v2-1200x630.jpg',':(exclude)assets/images/og/home-og-v2-1200x630.webp'],cwd=ROOT),b'')
 
 if __name__=='__main__':unittest.main()

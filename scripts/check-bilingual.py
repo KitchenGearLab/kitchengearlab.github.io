@@ -8,6 +8,7 @@ from bilingual import ROOT, ORIGIN, load_translations, strip_bilingual, norm, va
 from seasonal_hero import without_hero, without_homepage_hero
 from seasonal_logo import strip_logo
 from header import without_header
+from homepage_og import upgrade_homepage_metadata
 
 class Document(HTMLParser):
     def __init__(self,source):
@@ -45,7 +46,10 @@ for row in rows:
         original=original.replace('If you cook one item at a time, a single basket is simpler, easier to clean, and usually better value.','If you cook one item at a time, a single basket gives you one vessel to manage. Compare care instructions and current seller terms.')
     current=without_header(strip_bilingual(en)); original=without_header(original)
     if row['en']=='/ninja/':current,original=without_hero(current),without_hero(original)
-    if row['en']=='/':current,original=without_homepage_hero(current),without_homepage_hero(original)
+    if row['en']=='/':
+        current,original=without_homepage_hero(current),without_homepage_hero(original)
+        # Approved evergreen social image update; all other editorial bytes stay protected.
+        current,original=upgrade_homepage_metadata(current),upgrade_homepage_metadata(original)
     ck(current==original,'English content preserved '+row['en'])
     for lang in ['en','fr']:
         path=row[lang]; source=sources[path]; d=documents[path]; locale=lang+'-CA'
