@@ -1,6 +1,6 @@
 # Seasonal header logo
 
-All 64 English/French static pages share the managed logo picture and one small inline script in the document head. No scheduled task, external library, API, cookie, local storage, network time service or new workflow is required. The existing homepage/Ninja hero files and automation remain separate and unchanged.
+All 64 English/French pages use the logo picture and small head script from the single `_includes/header.html` source. The existing native Jekyll build expands the includes to static HTML (see `HEADER.md`). No scheduled task, external library, API, cookie, local storage, network time service or new workflow is required for logo switching. The existing homepage/Ninja hero files and automation remain separate and unchanged.
 
 ## Calendar and first render
 
@@ -8,7 +8,7 @@ The script uses the browser's current clock with `Intl.DateTimeFormat`, explicit
 
 The original logo remains the actual static `img` source and srcset. Christmas WebP and PNG sources have `media="not all"` by default. During Christmas, a short-lived MutationObserver registered in the head activates those sources in a DOM microtask before rendering and disconnects as soon as the picture and img exist. There is no inline script interrupting parsing in the middle of the header. Tests record source changes before first paint and exactly one displayed-image load, already Christmas. The HTML picture content follows the standard source/img model.
 
-The wrapper reserves exactly 32 × 32 CSS px and does not shrink. The img retains explicit 32 × 32 dimensions, empty alt (the adjacent brand name labels the link), original decoding behaviour and `object-fit:contain`. All pixels of the square artwork remain in frame, including the Santa hat. Brand name, tagline, navigation, CSS, SEO metadata, structured data and favicons stay unchanged. The brand stays a normal accessible link.
+The wrapper reserves 40 × 40 CSS px on mobile/tablet and 44 × 44 on desktop and does not shrink. The img has explicit 44 × 44 intrinsic dimensions, empty alt (the adjacent brand name labels the link), original decoding behaviour and `object-fit:contain`. All pixels of the square artwork remain in frame, including the Santa hat. Header 2.0 enlarges this frame while preserving the brand name, tagline, SEO metadata, structured data, favicons and original image files. The brand stays a normal accessible link.
 
 ## Fallbacks and limits
 
@@ -26,7 +26,7 @@ The exact supplied PNG is retained at `_originals/seasonal-logo/kitchengearlab-l
 
 ## Maintenance and checks
 
-The static HTML is the deployed source. `seasonal_logo.py` installs the same bounded head/header blocks on the inventory's 64 pages, computes all results before writing, refuses duplicate/ambiguous markup, and makes no writes when already current. `strip_logo` restores the original head/header bytes for the bilingual content-preservation checks. The bilingual generator preserves the inline script, image URLs and empty decorative alt unchanged.
+Edit seasonal logo markup/calendar only in `_includes/header.html`. `seasonal_logo.py` reads those bounded blocks for compatibility tests and delegates source validation to `header.py`; it makes no writes when all pages already use the includes. Its historical `strip_logo` helper remains available for content-preservation checks. The bilingual generator preserves both includes, so it cannot create a second independent logo definition. Compile into `_site/header2` before running rendered checks below.
 
 ```text
 python scripts/seasonal_logo.py --check

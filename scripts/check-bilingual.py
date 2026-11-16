@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 from bilingual import ROOT, ORIGIN, load_translations, strip_bilingual, norm, values
 from seasonal_hero import without_hero, without_homepage_hero
 from seasonal_logo import strip_logo
+from header import without_header
 
 class Document(HTMLParser):
     def __init__(self,source):
@@ -33,7 +34,7 @@ def ck(ok,message):
     if not ok: errors.append(message)
 for row in rows:
     for lang in ['en','fr']:
-        p=ROOT/('fr/' if lang=='fr' else '')/row['file']; source=p.read_text(encoding='utf8')
+        p=ROOT/'_site/header2'/('fr/' if lang=='fr' else '')/row['file']; source=p.read_text(encoding='utf8')
         sources[row[lang]]=source; documents[row[lang]]=Document(source)
 
 titles=set(); descriptions=set(); affiliate={'en':0,'fr':0}; paused={'en':0,'fr':0}; schema_count=0
@@ -42,7 +43,7 @@ for row in rows:
     original=baseline[row['file']].replace('"inLanguage": "en-US"','"inLanguage": "en-CA"').replace('<html lang="en-US">','<html lang="en-CA">').replace('property="og:locale" content="en_US"','property="og:locale" content="en_CA"')
     if row['en']=='/best-air-fryers/ninja-air-fryers/':
         original=original.replace('If you cook one item at a time, a single basket is simpler, easier to clean, and usually better value.','If you cook one item at a time, a single basket gives you one vessel to manage. Compare care instructions and current seller terms.')
-    current=strip_logo(strip_bilingual(en))
+    current=without_header(strip_bilingual(en)); original=without_header(original)
     if row['en']=='/ninja/':current,original=without_hero(current),without_hero(original)
     if row['en']=='/':current,original=without_homepage_hero(current),without_homepage_hero(original)
     ck(current==original,'English content preserved '+row['en'])

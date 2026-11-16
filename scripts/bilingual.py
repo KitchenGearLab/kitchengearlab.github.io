@@ -2,6 +2,7 @@
 from pathlib import Path
 from html.parser import HTMLParser
 import html, json, re, subprocess
+from header import body, FRONT, HEAD_INCLUDE, HEADER_INCLUDE
 from urllib.parse import urlsplit, urlunsplit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -41,7 +42,7 @@ class Extract(HTMLParser):
     # Treat entities within a text node as part of the same segment (feed decoded source).
 
 def values(source):
-    p=Extract(); p.feed(source); return p.values
+    p=Extract(); p.feed(body(source).replace(HEAD_INCLUDE,'').replace(HEADER_INCLUDE,'')); return p.values
 
 def inventory():
     rows=[]; catalogue=json.loads(CATALOGUE.read_text(encoding='utf8')) if CATALOGUE.exists() else {}
@@ -97,6 +98,7 @@ def switch(en, french=False):
         '<!-- bilingual:switch:end -->')
 
 def strip_bilingual(s):
+    s=body(s)
     for kind in ['seo','switch']:
         s=re.sub(r'\s*<!-- bilingual:'+kind+r':start -->.*?<!-- bilingual:'+kind+r':end -->', '', s, flags=re.S)
     return s
@@ -175,16 +177,16 @@ def build(check=False):
         if not check: p.parent.mkdir(parents=True,exist_ok=True); p.write_text(s,encoding='utf8',newline='\n')
     for row in rows:
         p=ROOT/row['file']; source=strip_bilingual(p.read_text(encoding='utf8'))
+        if source.count(HEAD_INCLUDE)!=1 or source.count(HEADER_INCLUDE)!=1:raise ValueError('Expected centralized header: '+str(p))
+        source=source.replace(HEAD_INCLUDE,'<!-- header-head-include -->').replace(HEADER_INCLUDE,'<!-- header-body-include -->')
         source=source.replace('"inLanguage": "en-US"','"inLanguage": "en-CA"').replace('<html lang="en-US">','<html lang="en-CA">').replace('property="og:locale" content="en_US"','property="og:locale" content="en_CA"')
         en=re.sub(r'(<link rel="canonical"[^>]*>)',r'\1\n'+alternate_links(row['en']),source,count=1)
-        marker='    </div></div>\n    <script defer src="/assets/js/navigation.js"></script>'
-        if en.count(marker)!=1: raise ValueError('Header marker mismatch: '+str(p))
-        en=en.replace(marker,'      '+switch(row['en'])+'\n'+marker)
         # Translate the source before inserting language-specific switch labels.
         fr_source=re.sub(r'(<link rel="canonical"[^>]*>)',r'\1\n'+alternate_links(row['en']),source,count=1)
         parser=French(translations,routes); parser.feed(fr_source); parser.close()
-        fr=''.join(parser.output).replace(marker,'      '+switch(row['en'],True)+'\n'+marker)
-        emit(p,en); emit(ROOT/'fr'/row['file'],fr)
+        fr=''.join(parser.output)
+        restore=lambda s:FRONT+s.replace('<!-- header-head-include -->',HEAD_INCLUDE).replace('<!-- header-body-include -->',HEADER_INCLUDE)
+        emit(p,restore(en)); emit(ROOT/'fr'/row['file'],restore(fr))
     # Both locales are first-class canonical URLs, with reciprocal sitemap annotations.
     sitemap=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
     for row in rows:

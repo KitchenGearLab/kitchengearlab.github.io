@@ -10,11 +10,12 @@ class LogoTests(unittest.TestCase):
         for row in rows:
             for prefix in ('','fr/'):
                 path=prefix+row['file'];source=(ROOT/path).read_text(encoding='utf8')
+                rendered=(ROOT/'_site/header2'/path).read_text(encoding='utf8')
                 with self.subTest(path=path):
-                    self.assertEqual(BLOCK.findall(source),[markup()])
-                    self.assertEqual(HEAD_BLOCK.findall(source),[head_markup()])
+                    self.assertEqual(BLOCK.findall(rendered),[markup()])
+                    self.assertEqual(HEAD_BLOCK.findall(rendered),[head_markup()])
                     self.assertEqual(replace_logo(source),source)
-                    self.assertEqual(strip_logo(source).count(ORIGINAL_IMG),1)
+                    self.assertEqual(strip_logo(rendered).count(ORIGINAL_IMG),1)
         self.assertEqual(update(check=True)['changed'],[])
     def test_ambiguous_logo_fails_closed(self):
         with self.assertRaises(ValueError):replace_logo(ORIGINAL_IMG*2)
@@ -24,7 +25,7 @@ class LogoTests(unittest.TestCase):
         source=markup()
         self.assertEqual(source.count('<img '),1)
         self.assertEqual(source.count('media="not all"'),2)
-        self.assertIn('width="32" height="32" alt=""',source)
+        self.assertIn('width="44" height="44" alt=""',source)
         self.assertIn('object-fit:contain;aspect-ratio:1',source)
         self.assertIn('this.onerror=null',source)
         self.assertIn("querySelectorAll('source')",source)
@@ -33,7 +34,7 @@ class LogoTests(unittest.TestCase):
         self.assertNotIn('src="https:',source)
         self.assertNotIn('<script>',source)
         self.assertIn('MutationObserver',head_markup())
-        self.assertIn('flex:0 0 32px;width:32px;height:32px',source)
+        self.assertIn('class="brand-logo"',source)
     def test_asset_integrity_and_original_preserved(self):
         manifest=json.loads((ROOT/'_data/seasonal-logo.json').read_text(encoding='utf8'))
         self.assertEqual((manifest['sourceWidth'],manifest['sourceHeight']),(1254,1254))

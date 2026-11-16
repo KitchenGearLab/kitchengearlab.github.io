@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!doctype html>
 <html lang="en-CA">
 <head>
@@ -178,78 +181,13 @@
     ]
   }
   </script>
-<!-- seasonal:logo:head:start --><script>(function(){try{var d={};new Intl.DateTimeFormat('en-CA',{timeZone:'America/Toronto',calendar:'gregory',numberingSystem:'latn',month:'numeric',day:'numeric'}).formatToParts(new Date()).forEach(function(v){d[v.type]=+v.value});if(d.month===11||(d.month===12&&d.day<=26)){var o=new MutationObserver(function(){var p=document.querySelector('[data-seasonal-logo]');if(p&&p.querySelector('img')){o.disconnect();p.querySelectorAll('source').forEach(function(s){s.media='all'})}});o.observe(document.documentElement,{childList:true,subtree:true})}}catch(e){}})();</script><!-- seasonal:logo:head:end -->
+{% include header.html part="head" %}
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- shared:header:start -->
-  <header class="site-header">
-    <div class="container"><div class="header-inner">
-      <a class="brand" href="/">
-        <!-- seasonal:logo:start --><picture data-seasonal-logo="" style="display:block;flex:0 0 32px;width:32px;height:32px"><source type="image/webp" media="not all" srcset="/assets/images/brand/kitchengearlab-logo-christmas-64.webp 1x, /assets/images/brand/kitchengearlab-logo-christmas-128.webp 2x, /assets/images/brand/kitchengearlab-logo-christmas-192.webp 3x" /><source type="image/png" media="not all" srcset="/assets/images/brand/kitchengearlab-logo-christmas-64.png 1x, /assets/images/brand/kitchengearlab-logo-christmas-128.png 2x, /assets/images/brand/kitchengearlab-logo-christmas-192.png 3x" /><img src="/assets/images/brand/kitchengearlab-logo-64.webp" srcset="/assets/images/brand/kitchengearlab-logo-64.webp 1x, /assets/images/brand/kitchengearlab-logo-128.webp 2x" width="32" height="32" alt="" style="object-fit:contain;aspect-ratio:1" onerror="this.onerror=null;this.parentNode.querySelectorAll('source').forEach(function(s){s.remove()})" decoding="async" /></picture><!-- seasonal:logo:end -->
-        <span class="brand-text"><span class="brand-name">KitchenGearLab</span><span class="brand-tagline">Neutral reviews. Practical decisions.</span></span>
-      </a>
-      <nav class="site-nav" aria-label="Primary"><ul class="nav-list">
-        <li><a href="/guides/">Guides</a></li>
-        <li><a href="/best-air-fryers/">Best Air Fryers</a></li>
-        <li class="nav-ninja"><a href="/ninja/">Ninja</a>
-          <details class="ninja-mega">
-            <summary class="ninja-mega-toggle" aria-label="Browse Ninja categories" aria-controls="ninja-mega-panel"><span class="ninja-nav-chevron" aria-hidden="true"></span></summary>
-            <div class="ninja-mega-panel" id="ninja-mega-panel">
-              <div class="ninja-mega-heading"><span>Ninja kitchen appliances</span><a href="/ninja/">View all 15 models <span aria-hidden="true">&rarr;</span></a></div>
-              <div class="ninja-mega-grid">
-                <details class="ninja-mega-category" open>
-                  <summary aria-controls="ninja-category-air-fryers-ovens"><svg class="ninja-nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M6 6h.01M9 6h.01"/><rect x="6" y="11" width="12" height="6" rx="1"/></svg><span>Air Fryers &amp; Compact Ovens</span></summary>
-                  <ul id="ninja-category-air-fryers-ovens">
-                    <li><a href="/ninja/ninja-crispi-fn101cgy-review/">Crispi<small>FN101CGY</small></a></li>
-                    <li><a href="/ninja/ninja-crispi-pro-as101ccy-review/">Crispi Pro<small>AS101CCY</small></a></li>
-                    <li><a href="/ninja/ninja-flip-sp151c-review/">Flip<small>SP151C</small></a></li>
-                  </ul>
-                </details>
-                <details class="ninja-mega-category" open>
-                  <summary aria-controls="ninja-category-frozen-treats-drinks"><svg class="ninja-nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 10a5 5 0 0 1 10 0M7 10a2 2 0 0 0 0 4h10a2 2 0 0 0 0-4M8 14l4 7 4-7M10 17h4"/></svg><span>Frozen Treats &amp; Drinks</span></summary>
-                  <ul id="ninja-category-frozen-treats-drinks">
-                    <li><a href="/ninja/ninja-creami-scoop-swirl-nc701c-review/">CREAMi Scoop &amp; Swirl<small>NC701C</small></a></li>
-                    <li><a href="/ninja/ninja-slushi-xl-fs601cpk1-review/">SLUSHi XL<small>FS601CPK1</small></a></li>
-                    <li><a href="/ninja/ninja-slushi-fs301c-review/">SLUSHi<small>FS301C</small></a></li>
-                    <li><a href="/ninja/ninja-creami-deluxe-nc601cpu-review/">CREAMi Deluxe<small>NC601CPU</small></a></li>
-                    <li><a href="/ninja/ninja-creami-deluxe-nc501c-review/">CREAMi Deluxe<small>NC501C</small></a></li>
-                  </ul>
-                </details>
-                <details class="ninja-mega-category" open>
-                  <summary aria-controls="ninja-category-blenders"><svg class="ninja-nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 5h10l-1 9a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2L7 5ZM9 5V3h6v2M17 7h3v5h-4M9 16l-2 5h10l-2-5M11 9h3M11 12h2"/></svg><span>Blenders</span></summary>
-                  <ul id="ninja-category-blenders">
-                    <li><a href="/ninja/ninja-professional-plus-bn751c-review/">Professional Plus<small>BN751C</small></a></li>
-                    <li><a href="/ninja/ninja-detect-tb300c-review/">Detect<small>TB300C</small></a></li>
-                    <li><a href="/ninja/ninja-blast-max-bc251gy-review/">Blast Max<small>BC251GY</small></a></li>
-                  </ul>
-                </details>
-                <details class="ninja-mega-category" open>
-                  <summary aria-controls="ninja-category-cooking-grilling"><svg class="ninja-nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 11h12v6a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-6ZM3 12h3m12 0h3M5 10h14M8 7c-2-2 2-3 0-5M12 7c-2-2 2-3 0-5M16 7c-2-2 2-3 0-5"/></svg><span>Cooking &amp; Grilling</span></summary>
-                  <ul id="ninja-category-cooking-grilling">
-                    <li><a href="/ninja/ninja-possiblecooker-pro-mc1001c-review/">PossibleCooker PRO<small>MC1001C</small></a></li>
-                    <li><a href="/ninja/ninja-woodfire-og701-review/">Woodfire<small>OG701</small></a></li>
-                    <li><a href="/ninja/ninja-foodi-smart-xl-dg551-review/">Foodi Smart XL<small>DG551</small></a></li>
-                  </ul>
-                </details>
-                <details class="ninja-mega-category" open>
-                  <summary aria-controls="ninja-category-coffee"><svg class="ninja-nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 9h12v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V9ZM17 10h1a3 3 0 0 1 0 6h-1M3 21h18M8 6V3M12 6V2"/></svg><span>Coffee</span></summary>
-                  <ul id="ninja-category-coffee">
-                    <li><a href="/ninja/ninja-luxe-cafe-es601c-review/">Luxe Café<small>ES601C</small></a></li>
-                  </ul>
-                </details>
-              </div>
-            </div>
-          </details>
-        </li>
-      </ul></nav>
-      <!-- bilingual:switch:start --><nav class="language-switch" aria-label="Language selection"><a href="/best-air-fryers/ninja-air-fryers/" lang="en-CA" hreflang="en-CA" aria-label="EN — English" aria-current="page">EN</a><span aria-hidden="true">/</span><a href="/fr/best-air-fryers/ninja-air-fryers/" lang="fr-CA" hreflang="fr-CA" aria-label="FR — Français">FR</a></nav><!-- bilingual:switch:end -->
-    </div></div>
-    <script defer src="/assets/js/navigation.js"></script>
-  </header>
-<!-- shared:header:end -->
+  {% include header.html %}
 
   <nav class="breadcrumbs" aria-label="Breadcrumb">
     <div class="container">
